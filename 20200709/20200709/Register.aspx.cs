@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,7 +16,7 @@ namespace _20200709
         }
 
         protected void Button3_Click(object sender, EventArgs e)
-        {
+        {         
             Server.Transfer("Login.aspx");
         }
     }
