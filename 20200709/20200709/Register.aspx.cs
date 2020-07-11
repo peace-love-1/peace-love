@@ -16,7 +16,7 @@ namespace _20200709
         }
 
         protected void Button3_Click(object sender, EventArgs e)
-        {         
+        {
             Server.Transfer("Login.aspx");
         }
     }
