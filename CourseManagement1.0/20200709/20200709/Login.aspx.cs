@@ -27,8 +27,23 @@ namespace _20200709
 
         }
 
+        private bool VCodeCheck()//判断验证码输入是否正确
+        {
+            try
+            {
+                if (Session["VerificationCode"].ToString().ToUpper() == TextBox3.Text.ToUpper())
+                    return true;
+                else
+                    return false;
+            }
+            catch
+            {
+                Label3.Text = "验证码错误";
+            }
+            return false;
+        }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        private void Login()//判断用户名是否存在以及用户名和密码输入是否正确
         {
             string account = TextBox1.Text;
             string password = TextBox2.Text;
@@ -63,41 +78,14 @@ namespace _20200709
             {
                 conn.Close();
             }
-            /* try
-             {
-                 string name = TextBox1.Text.Trim();//获取到文本框中的用户名
-                 string pwd = TextBox2.Text;//获取到文本框中的密码
-                 //连接数据库字段
-                 //string sqlcoon = "Data Source=.;Initial Catalog=students;Integrated Security=True";
-                 string sqlcoon = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
-                 string sql = string.Format("select count(*) from users where account=@account and password=@password");//查询是否有该条记录，根据账户密码
-                 SqlParameter[] par ={new SqlParameter("@account",name),new SqlParameter("@password",pwd)};//SqlParameter对象在C#中获取存储过程的返回值。利用Add方法和AddRange方法来使用。
-                 using (SqlConnection con = new SqlConnection(sqlcoon))//SqlConnection连接，用using释放连接
-                 {
-                     using (SqlCommand com = new SqlCommand(sql, con))//SqlCommand连接，用using释放连接
-                     {
-                         com.Parameters.AddRange(par);                      
-                         con.Open();//打开连接
-                         int resert = Convert.ToInt32(com.ExecuteScalar());
-                         //关闭连接
-                         //con.Close();
-                         //释放连接
-                         // con.Dispose();
-                         if (resert > 0)
-                         {
-                             Server.Transfer("Mainpage.aspx");//进入主页面
-                         }
-                         else
-                         {
-                             Label3.Text = "用户名或密码错误";
-                         }
-                     }
-                 }
-             }
-             catch
-             {
-                 Label3.Text = "登录异常";
-             }   */
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (VCodeCheck())
+                Login();
+            else
+                Label5.Text = "验证码错误";
         }
 
         protected void Button2_Click(object sender, EventArgs e)

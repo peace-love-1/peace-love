@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
+    <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerificationCode.aspx.cs">
+      <DependentUpon>VerificationCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerificationCode.aspx.designer.cs">
+      <DependentUpon>VerificationCode.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
