@@ -2,11 +2,21 @@
 
 namespace _20200709
 {
-    //author:彭子晨；
+    //author:彭子晨
     //create date:2020/07/11
-    //update date:2020/07/12  2020/07/15（林玉琴）
-    //description:访问数据库、进行数据操作的封装类
-    //2020/07/15  修改了查询数据库某数据是否存在的函数 QueryData , 增加了UpdateData修改数据函数
+    //description:用于访问数据库、进行数据操作的封装类
+
+    //author:彭子晨
+    //update date:2020/07/12
+    //description:增加对用户表操作的函数
+
+    //author:彭子晨
+    //update date:2020/07/15
+    //description:增加对基本课程表、专业课视图、通识课视图和用户课程视图操作的函数
+
+    //author: 林玉琴
+    //update date:2020/07/15 
+    //description:修改了查询数据库某数据是否存在的函数 QueryData , 增加了UpdateData修改数据函数
     public class Data_access
     {
         //打开数据库连接
@@ -127,7 +137,7 @@ namespace _20200709
             using (SqlConnection connection = GetConnection())
             {
                 using (SqlCommand cmd = new SqlCommand
-                ("insert into courses(id,cname,credit,[remain/max],tname,title,attribute,schoolyear,schoolterm,timeandplace,remark，academy，major,type)" +
+                ("insert into bcourses(id,cname,credit,[remain/max],tname,title,attribute,schoolyear,schoolterm,timeandplace,remark，academy，major,type)" +
                 " values(@id,@cname,@credit,@[remain/max],@tname,@title,@attribute,@schoolyear,@schoolterm,@timeandplace,@remark,@academy,@major.@type)", connection))
                 {
                     cmd.Prepare();
