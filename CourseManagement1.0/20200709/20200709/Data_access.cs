@@ -4,19 +4,22 @@ namespace _20200709
 {
     //author:彭子晨；
     //create date:2020/07/11
-    //update date:2020/07/12
+    //update date:2020/07/12  2020/07/15（林玉琴）
     //description:访问数据库、进行数据操作的封装类
+    //2020/07/15  修改了查询数据库某数据是否存在的函数 QueryData , 增加了UpdateData修改数据函数
     public class Data_access
     {
-        private static SqlConnection GetConnection()
+        //打开数据库连接
+        public static SqlConnection GetConnection()
         {
             SqlConnection connection = new SqlConnection(
                 System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString());
             connection.Open();
             return connection;
-        } //打开数据库连接
+        } 
 
-        private static void InsertUsers(string account, string password)
+        //插入新的用户数据，后面可能增加用户权限属性
+        public static void InsertUsers(string account, string password)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -29,33 +32,67 @@ namespace _20200709
                     cmd.ExecuteNonQuery();
                 }
             }
-        } //插入新的用户数据，后面可能增加用户权限属性
+        } 
 
-        private static bool QueryAccount(string account)
+        //修改数据表中某数据
+        public static string UpdateData(string a,string b)
         {
-            using (SqlConnection connection = GetConnection())
+            string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
+            SqlConnection conn = new SqlConnection(connStr);
+            try
             {
-                string stm = "select count(*) from users where account=@account";
-                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("update users set password='" + a + "' where @email='" + b + "'", conn);
+                cmd.Parameters.AddWithValue("@email", b);
+                cmd.ExecuteNonQuery();
+                return "1";
+            }
+            catch
+            {
+                return "2";
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        //查询某数据是否存在，a表示要查询的数据，b表示表中所在列的名字
+        public static string QueryData(string a,string b)
+        {
+            //a = b;
+            string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
+            SqlConnection conn = new SqlConnection(connStr);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("select count(*) from users where " + b + "=@"+b, conn);//查询邮箱是否已存在
+                cmd.Parameters.AddWithValue("@"+b, a);
+                cmd.Parameters["@"+b].Value = a;
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
                 {
-                    cmd.Parameters.AddWithValue("@account", account);
-                    //int count = (int)cmd.ExecuteScalar();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
+                    return "1";
+                }
+                else
+                {
+                    return "2";//不存在
                 }
             }
-        }   //查询用户名是否存在
+            catch
+            {
+                return "3";//异常
+            }
+            finally
+            {
+                conn.Close();
+            }
+        } 
 
-        private static bool QueryPassword(string account, string password)
+
+        //查询用户密码是否输入正确
+        public static bool QueryPassword(string account, string password)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -76,9 +113,14 @@ namespace _20200709
                     }
                 }
             }
-        }   //查询用户密码是否输入正确
+        }   
 
-        private static void InsertCourses(string id, string cname, float credit, string remainmax, string tname,
+
+
+
+
+
+        public static void InsertCourses(string id, string cname, float credit, string remainmax, string tname,
            string title, string attribute, string schoolyear, int schoolterm, string timeandplace, string remark,
            string academy, string major, string type)
         {
