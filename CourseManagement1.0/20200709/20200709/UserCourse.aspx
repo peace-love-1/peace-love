@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Selected_Courses.aspx.cs" Inherits="_20200709.selected_courses" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserCourse.aspx.cs" Inherits="_20200709.selected_courses" %>
 
 <!DOCTYPE html>
 
@@ -14,16 +14,19 @@
         .auto-style2 {
             text-align: center;
         }
+        .auto-style3 {
+            margin-left: 309px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-        &nbsp;<asp:TreeView ID="TreeView1" runat="server">
+            <asp:TreeView ID="TreeView1" runat="server">
                 <Nodes>
                     <asp:TreeNode Text="选课" Value="选课">
-                        <asp:TreeNode Text="专业课" Value="专业课"></asp:TreeNode>
-                        <asp:TreeNode Text="通识课" Value="通识课"></asp:TreeNode>
+                        <asp:TreeNode Text="专业课" Value="专业课" NavigateUrl="~/ProfessionalCourse.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="通识课" Value="通识课" NavigateUrl="~/GeneralCourse.aspx"></asp:TreeNode>
                     </asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
@@ -35,8 +38,9 @@
                     <br />
                 </div>
             </asp:Panel>
+            <div class="auto-style2">
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学年 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学年 
             <asp:DropDownList ID="DropDownList1" runat="server">
                 <asp:ListItem>2019-2020</asp:ListItem>
                 <asp:ListItem>2018-2019</asp:ListItem>
@@ -53,7 +57,8 @@
             <asp:Button ID="Button1" runat="server" Text="查询" BackColor="#99CCFF" />
             <br />
             <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="610px">
+            </div>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="807px" CssClass="auto-style3">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />

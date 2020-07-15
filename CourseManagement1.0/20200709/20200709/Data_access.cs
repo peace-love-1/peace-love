@@ -108,5 +108,78 @@ namespace _20200709
             }
         } //插入爬虫爬取的课程信息
 
+        private static SqlDataReader QueryPcourseMajor(string academy,string major,int grade)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from pcourses where academy=@academy and major=@major and grade=@grade";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@academy", academy);
+                    cmd.Parameters.AddWithValue("@major", major);
+                    cmd.Parameters.AddWithValue("@grade", grade);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    return reader;
+                }
+            }
+        }//按院系、专业、年级查询专业课课程信息
+
+        private static SqlDataReader QueryPcourseCame(int grade, string cname)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from pcourses where cname=@cname and grade=@grade";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@cname", cname);
+                    cmd.Parameters.AddWithValue("@grade", grade);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    return reader;
+                }
+            }
+        }//按年级、课程名查询专业课课程信息
+
+        private static SqlDataReader QueryGcourseCname(string cname)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from gcourses where cname=@cname";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@cname", cname);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    return reader;
+                }
+            }
+        }//按课程名查询通用课课程信息
+
+        private static SqlDataReader QueryGcourseTname(string tname)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from gcourses where tname=@tname";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@tname", tname);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    return reader;
+                }
+            }
+        }//按教师名查询通用课课程信息
+
+        private static SqlDataReader QueryUcourseDate(string schoolyear, int schoolterm)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from ucourses where schoolyear=@schoolyear and schoolterm=@schoolterm";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@schoolyear", schoolyear);
+                    cmd.Parameters.AddWithValue("@schoolterm", schoolterm);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    return reader;
+                }
+            }
+        }//按学年、学期查询已选课程
     }
 }

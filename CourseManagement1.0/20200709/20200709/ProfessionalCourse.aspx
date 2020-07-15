@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mainpage.aspx.cs" Inherits="_20200709.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProfessionalCourse.aspx.cs" Inherits="_20200709.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,10 @@
             font-size: x-large;
         }
         .auto-style6 {
-            margin-left: 310px;
+            margin-left: 518px;
+        }
+        .auto-style7 {
+            margin-left: 260px;
         }
     </style>
 </head>
@@ -28,63 +31,69 @@
             <asp:TreeView ID="TreeView1" runat="server" Height="101px" Width="126px">
                 <Nodes>
                     <asp:TreeNode Text="选课" Value="选课">
-                        <asp:TreeNode Text="通识课课" Value="通识课课"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/GeneralCourse.aspx" Text="通识课课" Value="通识课课"></asp:TreeNode>
                     </asp:TreeNode>
-                    <asp:TreeNode Text="已选课程" Value="已选课程"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="auto-style4">
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style5"><strong>&nbsp;选课-专业课</strong></span><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style5"><strong>选课-专业课</strong></span><br />
                 </div>
             </asp:Panel>
             <asp:Panel ID="Panel2" runat="server">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" CssClass="auto-style6" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" Width="450px">
+                <div class="auto-style4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                </div>
+                <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" CssClass="auto-style6" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" Width="356px">
                     <asp:ListItem>按学院查询</asp:ListItem>
                     <asp:ListItem>按课程名查询</asp:ListItem>
                 </asp:RadioButtonList>
             </asp:Panel>
             <asp:Panel ID="Panel3" runat="server" Visible="False">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 院系 
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>计算机学院</asp:ListItem>
-                    <asp:ListItem>测绘学院</asp:ListItem>
-                    <asp:ListItem>文学院</asp:ListItem>
-                    <asp:ListItem>法学院</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp; 专业 
-                <asp:DropDownList ID="DropDownList2" runat="server">
-                    <asp:ListItem>计算机科学与技术</asp:ListItem>
-                    <asp:ListItem>软件工程</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp; 年级 
-                <asp:DropDownList ID="DropDownList3" runat="server">
-                    <asp:ListItem>2019</asp:ListItem>
-                    <asp:ListItem>2018</asp:ListItem>
-                    <asp:ListItem>2017</asp:ListItem>
-                    <asp:ListItem>2016</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp;
-                <asp:Button ID="Button2" runat="server" BackColor="#99CCFF" Text="查询" />
+                <div class="auto-style4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 院系 
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem>计算机学院</asp:ListItem>
+                        <asp:ListItem>测绘学院</asp:ListItem>
+                        <asp:ListItem>文学院</asp:ListItem>
+                        <asp:ListItem>法学院</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp; 专业 
+                    <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem>计算机科学与技术</asp:ListItem>
+                        <asp:ListItem>软件工程</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp; 年级 
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+                        <asp:ListItem>2019</asp:ListItem>
+                        <asp:ListItem>2018</asp:ListItem>
+                        <asp:ListItem>2017</asp:ListItem>
+                        <asp:ListItem>2016</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp;
+                    <asp:Button ID="Button2" runat="server" BackColor="#99CCFF" Text="查询" />
+                </div>
             </asp:Panel>
             <asp:Panel ID="Panel4" runat="server" Visible="False">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 年级 
-                <asp:DropDownList ID="DropDownList4" runat="server">
-                    <asp:ListItem>2019</asp:ListItem>
-                    <asp:ListItem>2018</asp:ListItem>
-                    <asp:ListItem>2017</asp:ListItem>
-                    <asp:ListItem>2016</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp; 课程名 
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" />
+                <div class="auto-style4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 年级 
+                    <asp:DropDownList ID="DropDownList4" runat="server">
+                        <asp:ListItem>2019</asp:ListItem>
+                        <asp:ListItem>2018</asp:ListItem>
+                        <asp:ListItem>2017</asp:ListItem>
+                        <asp:ListItem>2016</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp; 课程名 
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    &nbsp;&nbsp;
+                    <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" />
+                </div>
             </asp:Panel>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="941px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />

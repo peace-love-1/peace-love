@@ -13,6 +13,9 @@
         .auto-style2 {
             text-align: center;
         }
+        .auto-style3 {
+            margin-left: 236px;
+        }
     </style>
 </head>
 <body>
@@ -22,9 +25,9 @@
             <asp:TreeView ID="TreeView1" runat="server">
                 <Nodes>
                     <asp:TreeNode Text="选课" Value="选课">
-                        <asp:TreeNode Text="专业课" Value="专业课"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/ProfessionalCourse.aspx" Text="专业课" Value="专业课"></asp:TreeNode>
                     </asp:TreeNode>
-                    <asp:TreeNode Text="已选课程" Value="已选课程"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
             <br />
@@ -34,15 +37,17 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span class="auto-style1">选课-通识课</span></strong><br />
                 </div>
             </asp:Panel>
-            <br />
+            <div class="auto-style2">
+                <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 课程名/教师名&nbsp; 
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;
-            <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" />
-            <br />
-            <br />
-            <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" />
+                <br />
+                <br />
+                <br />
+            </div>
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style3" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="978px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
