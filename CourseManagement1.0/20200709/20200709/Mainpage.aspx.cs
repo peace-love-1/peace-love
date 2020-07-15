@@ -6,7 +6,7 @@ namespace _20200709
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,9 +29,18 @@ namespace _20200709
             Server.Transfer("Login.aspx");
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (RadioButtonList1.SelectedIndex == 0)
+            {
+                Panel3.Visible = true;
+                Panel4.Visible = false;
+            }
+            else
+            {
+                Panel3.Visible = false;
+                Panel4.Visible = true;
+            }
         }
     }
 }

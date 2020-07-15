@@ -64,8 +64,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GeneralCourse.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
+    <Content Include="Selected_Courses.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -76,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data_access.cs" />
-    <Compile Include="EmailCode.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -108,6 +109,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Selected_Courses.aspx.cs">
+      <DependentUpon>Selected_Courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Selected_Courses.aspx.designer.cs">
+      <DependentUpon>Selected_Courses.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerificationCode.aspx.cs">
       <DependentUpon>VerificationCode.aspx</DependentUpon>
