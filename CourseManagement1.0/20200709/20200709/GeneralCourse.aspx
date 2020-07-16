@@ -42,12 +42,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 课程名/教师名&nbsp; 
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;
-                <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" />
+                <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button1_Click" />
                 <br />
                 <br />
                 <br />
             </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style3" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="978px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style3" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="978px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -55,7 +55,11 @@
                     <asp:BoundField DataField="credit" HeaderText="学分" SortExpression="credit" />
                     <asp:BoundField DataField="tname" HeaderText="教师名" SortExpression="tname" />
                     <asp:BoundField DataField="academy" HeaderText="授课学院" SortExpression="academy" />
-                    <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="选课" ShowHeader="True" Text="选课" />
+                    <asp:TemplateField HeaderText="选课">
+                        <ItemTemplate>
+                            <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="Select" OnClick="Button1_Click1" Text="选课" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="操作" ShowHeader="True" Text="查看详情" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
@@ -69,7 +73,17 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [bcourses]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE ([tname] = @tname)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBox1" Name="tname" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE ([cname] = @cname)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBox1" Name="cname" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             <br />
             <br />
             <br />

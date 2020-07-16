@@ -402,8 +402,8 @@ C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\bin
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.csprojAssemblyReference.cache
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.csproj.CoreCompileInputs.cache
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.csproj.CopyComplete
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.dll
 C:\Users\24274\Source\Repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.pdb
+C:\Users\24274\source\repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.csprojAssemblyReference.cache

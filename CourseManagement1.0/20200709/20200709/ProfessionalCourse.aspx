@@ -74,7 +74,7 @@
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>
                     &nbsp;
-                    <asp:Button ID="Button2" runat="server" BackColor="#99CCFF" Text="查询" />
+                    <asp:Button ID="Button2" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button2_Click" />
                 </div>
             </asp:Panel>
             <asp:Panel ID="Panel4" runat="server" Visible="False">
@@ -89,7 +89,7 @@
                     &nbsp; 课程名 
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     &nbsp;&nbsp;
-                    <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" />
+                    <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button1_Click1" />
                 </div>
             </asp:Panel>
             <br />
@@ -103,7 +103,11 @@
                     <asp:BoundField DataField="academy" HeaderText="授课学院" SortExpression="academy" />
                     <asp:BoundField DataField="major" HeaderText="专业" SortExpression="major" />
                     <asp:BoundField DataField="grade" HeaderText="年级" SortExpression="grade" />
-                    <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="选课" ShowHeader="True" Text="选课" />
+                    <asp:TemplateField HeaderText="选课">
+                        <ItemTemplate>
+                            <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="Select" OnClick="Button1_Click2" Text="选课" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="操作" ShowHeader="True" Text="课程详情" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
@@ -118,6 +122,24 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([academy] = @academy) AND ([major] = @major) AND ([grade] = @grade))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="academy" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList2" Name="major" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList3" Name="grade" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([grade] = @grade) AND ([cname] = @cname))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList4" Name="grade" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox1" Name="cname" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE ([grade] = @grade)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList4" Name="grade" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
         <p>
             &nbsp;</p>

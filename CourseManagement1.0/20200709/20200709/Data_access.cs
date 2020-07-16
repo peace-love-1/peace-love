@@ -17,6 +17,10 @@ namespace _20200709
     //author: 林玉琴
     //update date:2020/07/15 
     //description:修改了查询数据库某数据是否存在的函数 QueryData , 增加了UpdateData修改数据函数
+
+    //author:彭子晨
+    //update date:2020/07/16
+    //description:增加InsertUc函数，向选课表中插入用户名、课头号
     public class Data_access
     {
         //打开数据库连接
@@ -160,7 +164,7 @@ namespace _20200709
             }
         } //插入爬虫爬取的课程信息
 
-        private static SqlDataReader QueryPcourseMajor(string academy,string major,int grade)
+        public static SqlDataReader QueryPcourseMajor(string academy,string major,int grade)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -176,7 +180,7 @@ namespace _20200709
             }
         }//按院系、专业、年级查询专业课课程信息
 
-        private static SqlDataReader QueryPcourseCame(int grade, string cname)
+        public static SqlDataReader QueryPcourseCame(int grade, string cname)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -191,10 +195,9 @@ namespace _20200709
             }
         }//按年级、课程名查询专业课课程信息
 
-        private static SqlDataReader QueryGcourseCname(string cname)
+        public static SqlDataReader QueryGcourseCname(string cname)
         {
-            using (SqlConnection connection = GetConnection())
-            {
+               SqlConnection connection = GetConnection();
                 string stm = "select * from gcourses where cname=@cname";
                 using (SqlCommand cmd = new SqlCommand(stm, connection))
                 {
@@ -202,10 +205,10 @@ namespace _20200709
                     SqlDataReader reader = cmd.ExecuteReader();
                     return reader;
                 }
-            }
+            
         }//按课程名查询通用课课程信息
 
-        private static SqlDataReader QueryGcourseTname(string tname)
+        public static SqlDataReader QueryGcourseTname(string tname)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -219,7 +222,7 @@ namespace _20200709
             }
         }//按教师名查询通用课课程信息
 
-        private static SqlDataReader QueryUcourseDate(string schoolyear, int schoolterm)
+        public static SqlDataReader QueryUcourseDate(string schoolyear, int schoolterm)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -233,5 +236,20 @@ namespace _20200709
                 }
             }
         }//按学年、学期查询已选课程
+
+        public static void InsertUc(string account,string id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("insert into uc(account,courseid) values(@account,@courseid)", connection))
+                {
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@account", account);
+                    cmd.Parameters.AddWithValue("@courseid", id); 
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//向选课表中插入用户名、课头号
     }
 }

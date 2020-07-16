@@ -79,6 +79,12 @@
   <ItemGroup>
     <Compile Include="Data_access.cs" />
     <Compile Include="EmailCode.cs" />
+    <Compile Include="GeneralCourse.aspx.cs">
+      <DependentUpon>GeneralCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralCourse.aspx.designer.cs">
+      <DependentUpon>GeneralCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

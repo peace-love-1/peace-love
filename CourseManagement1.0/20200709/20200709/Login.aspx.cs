@@ -47,6 +47,7 @@ namespace _20200709
         {
             string account = TextBox1.Text;
             string password = TextBox2.Text;
+            Session["account"] = account; //存放用户名，以便登录后标识用户进行选课等操作
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
             SqlConnection conn = new SqlConnection(connStr);
             try
@@ -60,7 +61,7 @@ namespace _20200709
                 int count = (int)cmd.ExecuteScalar();
                 if (count == 1)
                 {
-                    Response.Redirect("Mainpage.aspx");
+                    Response.Redirect("UserCourse.aspx");
                 }
                 else
                 {

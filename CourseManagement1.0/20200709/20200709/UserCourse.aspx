@@ -49,12 +49,12 @@
             </asp:DropDownList>
 &nbsp; 学期 
             <asp:DropDownList ID="DropDownList2" runat="server">
-                <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>1</asp:ListItem>
             </asp:DropDownList>
 &nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="查询" BackColor="#99CCFF" />
+            <asp:Button ID="Button1" runat="server" Text="查询" BackColor="#99CCFF" OnClick="Button1_Click" />
             <br />
             <br />
             </div>
@@ -81,7 +81,12 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [type], [credit], [tname], [academy], [major] FROM [ucourses]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [type], [credit], [tname], [academy], [major] FROM [ucourses] WHERE (([schoolyear] = @schoolyear) AND ([schoolterm] = @schoolterm))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="schoolyear" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList2" Name="schoolterm" PropertyName="SelectedValue" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             <br />
             <br />
             <br />
