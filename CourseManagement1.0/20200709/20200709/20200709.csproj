@@ -74,15 +74,13 @@
     <Content Include="GeneralCourse.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
-    <Content Include="image\1.jpg" />
-    <Content Include="image\2.jpg" />
     <Content Include="Selected_Courses.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Login.aspx" />
-    <Content Include="Mainpage.aspx" />
+    <Content Include="ProfessionalCourse.aspx" />
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -94,7 +92,6 @@
       <DependentUpon>Administrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data_access.cs" />
-    <Compile Include="EmailCode.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -113,12 +110,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Mainpage.aspx.cs">
-      <DependentUpon>Mainpage.aspx</DependentUpon>
+    <Compile Include="ProfessionalCourse.aspx.cs">
+      <DependentUpon>ProfessionalCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mainpage.aspx.designer.cs">
-      <DependentUpon>Mainpage.aspx</DependentUpon>
+    <Compile Include="ProfessionalCourse.aspx.designer.cs">
+      <DependentUpon>ProfessionalCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -127,12 +124,12 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Selected_Courses.aspx.cs">
-      <DependentUpon>Selected_Courses.aspx</DependentUpon>
+    <Compile Include="UserCourse.aspx.cs">
+      <DependentUpon>UserCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Selected_Courses.aspx.designer.cs">
-      <DependentUpon>Selected_Courses.aspx</DependentUpon>
+    <Compile Include="UserCourse.aspx.designer.cs">
+      <DependentUpon>UserCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerificationCode.aspx.cs">
       <DependentUpon>VerificationCode.aspx</DependentUpon>
