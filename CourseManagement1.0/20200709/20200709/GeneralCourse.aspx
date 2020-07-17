@@ -10,17 +10,37 @@
         .auto-style1 {
             font-size: x-large;
         }
-        .auto-style2 {
-            text-align: center;
-        }
         .auto-style3 {
-            margin-left: 236px;
+            margin-left: 35px;
+        }
+        .auto-style4 {
+            width: 1261px;
+        }
+        .auto-style5 {
+            width: 688px;
+            height: 637px;
+            position: absolute;
+            left: 1079px;
+            top: 145px;
+        }
+        .auto-style6 {
+            font-size: x-large;
+            font-weight: bold;
+        }
+        .auto-style7 {
+            text-align: justify;
+            width: 1051px;
+            margin-left: 197px;
+        }
+        .auto-style8 {
+            text-align: justify;
+            margin-left: 385px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="auto-style4">
             <br />
             <asp:TreeView ID="TreeView1" runat="server">
                 <Nodes>
@@ -32,18 +52,24 @@
             </asp:TreeView>
             <br />
             <asp:Panel ID="Panel1" runat="server">
-                <div class="auto-style2">
+                <div class="auto-style8">
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span class="auto-style1">选课-通识课</span></strong><br />
+                    &nbsp;&nbsp; <strong><span class="auto-style1">选课-通识课</span></strong><br />
                 </div>
             </asp:Panel>
-            <div class="auto-style2">
+            <div class="auto-style7">
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 课程名/教师名&nbsp; 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校&nbsp; 
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem>武汉大学</asp:ListItem>
+                    <asp:ListItem>华中科技大学</asp:ListItem>
+                    <asp:ListItem>北京大学</asp:ListItem>
+                    <asp:ListItem>清华大学</asp:ListItem>
+                </asp:DropDownList>
+                &nbsp; 课程名/教师名&nbsp; 
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;
                 <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button1_Click" />
-                <br />
                 <br />
                 <br />
             </div>
@@ -73,18 +99,58 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE ([tname] = @tname)">
+            &nbsp;<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE (([school] = @school) AND ([tname] = @tname))">
                 <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="school" PropertyName="SelectedValue" Type="String" />
                     <asp:ControlParameter ControlID="TextBox1" Name="tname" PropertyName="Text" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE ([cname] = @cname)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE ([school] = @school)">
                 <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="school" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy] FROM [gcourses] WHERE (([school] = @school) AND ([cname] = @cname))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="school" PropertyName="SelectedValue" Type="String" />
                     <asp:ControlParameter ControlID="TextBox1" Name="cname" PropertyName="Text" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />
+            <div class="auto-style5">
+                <br />
+&nbsp;&nbsp;&nbsp; <span class="auto-style6">选课申请(通识课）</span><br />
+                <br />
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource4" ForeColor="#333333" GridLines="None" Height="177px" Width="356px">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
+                        <asp:BoundField DataField="cname" HeaderText="课程名" SortExpression="cname" />
+                        <asp:BoundField DataField="state" HeaderText="状态" SortExpression="state" />
+                        <asp:TemplateField HeaderText="操作">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandName="Select" OnClick="LinkButton1_Click" Text="删除"></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [state] FROM [application] WHERE (([account] = @account) AND ([type] = @type))">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="account" SessionField="account" Type="String" />
+                        <asp:Parameter DefaultValue="通识课" Name="type" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
             <br />
             <br />
         </div>

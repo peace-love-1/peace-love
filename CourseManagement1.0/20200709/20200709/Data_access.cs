@@ -3,24 +3,16 @@
 namespace _20200709
 {
     //author:彭子晨
-    //create date:2020/07/11
-    //description:用于访问数据库、进行数据操作的封装类
-
-    //author:彭子晨
-    //update date:2020/07/12
-    //description:增加对用户表操作的函数
-
-    //author:彭子晨
-    //update date:2020/07/15
-    //description:增加对基本课程表、专业课视图、通识课视图和用户课程视图操作的函数
+    //create date:2020/07/11  description:用于访问数据库、进行数据操作的封装类 
+    //update date:2020/07/12  description:增加对用户表操作的函数
+    //update date:2020/07/15  description:增加对基本课程表、专业课视图、通识课视图和用户课程视图操作的函数
+    //update date:2020/07/16  description:增加InsertUc函数，向选课表中插入用户名、课头号
+    //update date:2020/07/17  description:增加DeleteUc函数，删除选课表中的数据
 
     //author: 林玉琴
     //update date:2020/07/15 
     //description:修改了查询数据库某数据是否存在的函数 QueryData , 增加了UpdateData修改数据函数
 
-    //author:彭子晨
-    //update date:2020/07/16
-    //description:增加InsertUc函数，向选课表中插入用户名、课头号
     public class Data_access
     {
         //打开数据库连接
@@ -135,14 +127,14 @@ namespace _20200709
 
 
         public static void InsertCourses(string id, string cname, float credit, string remainmax, string tname,
-           string title, string attribute, string schoolyear, int schoolterm, string timeandplace, string remark,
-           string academy, string major, string type)
+           string schoolyear, int schoolterm, string timeandplace, string remark,
+           string academy, string major, string type,int grade)
         {
             using (SqlConnection connection = GetConnection())
             {
                 using (SqlCommand cmd = new SqlCommand
-                ("insert into bcourses(id,cname,credit,[remain/max],tname,title,attribute,schoolyear,schoolterm,timeandplace,remark，academy，major,type)" +
-                " values(@id,@cname,@credit,@[remain/max],@tname,@title,@attribute,@schoolyear,@schoolterm,@timeandplace,@remark,@academy,@major.@type)", connection))
+                ("insert into bcourses(id,cname,credit,[remain/max],tname,schoolyear,schoolterm,timeandplace,remark，academy，major,type,grade)" +
+                " values(@id,@cname,@credit,@[remain/max],@tname，@schoolyear,@schoolterm,@timeandplace,@remark,@academy,@major.@type,@grade)", connection))
                 {
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@id", id);
@@ -150,8 +142,6 @@ namespace _20200709
                     cmd.Parameters.AddWithValue("@credit", credit);
                     cmd.Parameters.AddWithValue("@[remain/max]", remainmax);
                     cmd.Parameters.AddWithValue("@tname", tname);
-                    cmd.Parameters.AddWithValue("@title", title);
-                    cmd.Parameters.AddWithValue("@attribute", attribute);
                     cmd.Parameters.AddWithValue("@schoolyear", schoolyear);
                     cmd.Parameters.AddWithValue("@schoolterm", schoolterm);
                     cmd.Parameters.AddWithValue("@timeandplace", timeandplace);
@@ -159,6 +149,7 @@ namespace _20200709
                     cmd.Parameters.AddWithValue("@academy", academy);
                     cmd.Parameters.AddWithValue("@major", major);
                     cmd.Parameters.AddWithValue("@type", type);
+                    cmd.Parameters.AddWithValue("@grade", grade);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -237,19 +228,34 @@ namespace _20200709
             }
         }//按学年、学期查询已选课程
 
-        public static void InsertUc(string account,string id)
+        public static void InsertUc(string account,string id,string state)
         {
             using (SqlConnection connection = GetConnection())
             {
                 using (SqlCommand cmd = new SqlCommand
-                ("insert into uc(account,courseid) values(@account,@courseid)", connection))
+                ("insert into uc(account,courseid,state) values(@account,@courseid,@state)", connection))
                 {
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@account", account);
-                    cmd.Parameters.AddWithValue("@courseid", id); 
+                    cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.Parameters.AddWithValue("@state", state);
                     cmd.ExecuteNonQuery();
                 }
             }
-        }//向选课表中插入用户名、课头号
+        }//向选课表中插入用户名、课头号、选课状态
+
+        public static void DeleteUc(string account, string id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("delete from uc where account=@account and courseid=@courseid", connection))
+                {
+                    cmd.Parameters.AddWithValue("@account", account);
+                    cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//删除选课表中的数据
     }
 }
