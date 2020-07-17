@@ -98,6 +98,9 @@ namespace _20200709
             Server.Transfer("Findpassword.aspx");
         }
 
-
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Administrator.aspx");
+        }
     }
 }
