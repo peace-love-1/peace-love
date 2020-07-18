@@ -40,14 +40,14 @@ namespace _20200709
         }
 
         //对已选课程进行撤课
-        protected void Button1_Click1(object sender, EventArgs e)
+        protected void Button1_Click2(object sender, EventArgs e)
         {
-
             string account = Session["account"].ToString();
-            int row = ((GridViewRow)((LinkButton)sender).NamingContainer).RowIndex;
-            string id = GridView1.Rows[row].Cells[1].Text;
-            Data_access.DeleteUc(account, id);
-            if (DropDownList3.SelectedValue == "全部")
+            int row = ((GridViewRow)((Button)sender).NamingContainer).RowIndex;
+            string id = GridView1.Rows[row].Cells[0].Text;
+            string state = "成功";
+            Data_access.DeleteUc(account,id,state);
+            if (GridView1.DataSourceID == "SqlDataSource2")
             {
                 GridView1.DataSourceID = "";
                 GridView1.DataSourceID = "SqlDataSource2";
