@@ -18,9 +18,9 @@ namespace _20200709
         {
             if (!IsPostBack)
             {
-                GridView1.DataSourceID = "SqlDataSource2";
-                
+                GridView1.DataSourceID = "SqlDataSource2";               
             }
+            Label1.Text = Session["account"].ToString();
         }
 
         //按学年、学期查询
@@ -57,6 +57,11 @@ namespace _20200709
                 GridView1.DataSourceID = "";
                 GridView1.DataSourceID = "SqlDataSource3";
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
         }
     }
 }

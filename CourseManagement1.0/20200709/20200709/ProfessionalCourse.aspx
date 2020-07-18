@@ -65,9 +65,20 @@
         .auto-style18 {
             font-size: medium;
         }
+        .auto-style20 {
+            width: 458px;
+            height: 128px;
+            position: absolute;
+            left: 1412px;
+            top: 0;
+            margin-bottom: 3px;
+        }
         </style>
 </head>
-<body>
+<body style="background-image: url('image/3.jpg');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div class="auto-style8">
             <asp:TreeView ID="TreeView1" runat="server" Height="101px" Width="126px">
@@ -78,6 +89,14 @@
                     <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
+            <div class="auto-style20">
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;
+                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">退出登录</asp:LinkButton>
+            </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="auto-style14">
@@ -197,7 +216,8 @@
             </asp:SqlDataSource>
             <div class="auto-style10">
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">选课申请单（专业课）</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">选课申请单（专业课）<br />
+                </span><br />
                 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="16px" Width="347px" OnDataBound="GridView2_DataBound">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>

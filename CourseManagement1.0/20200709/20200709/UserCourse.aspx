@@ -17,9 +17,20 @@
         .auto-style3 {
             margin-left: 309px;
         }
+         .auto-style5 {
+            width: 458px;
+            height: 128px;
+            position: absolute;
+            left: 1412px;
+            top: 0;
+            margin-bottom: 3px;
+        }
     </style>
 </head>
-<body>
+<body style="background-image: url('image/3.jpg');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div>
             <asp:TreeView ID="TreeView1" runat="server">
@@ -30,6 +41,13 @@
                     </asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
+            <div class="auto-style5">
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">退出登录</asp:LinkButton>
+            </div>
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="auto-style2">

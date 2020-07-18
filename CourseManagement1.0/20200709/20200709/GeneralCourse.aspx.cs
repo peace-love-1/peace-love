@@ -21,9 +21,9 @@ namespace _20200709
             if (!IsPostBack)
             {
                 GridView1.DataSourceID = "SqlDataSource1";
-                GridView2.DataSourceID = "SqlDataSource4";
-                
+                GridView2.DataSourceID = "SqlDataSource4";               
             }
+            Label1.Text = Session["account"].ToString();
         }
 
         public void IsButtonEnabled()
@@ -127,6 +127,11 @@ namespace _20200709
         protected void GridView2_DataBound(object sender, EventArgs e)
         {
             IsButtonEnabled2();
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
         }
     }
 }

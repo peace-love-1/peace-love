@@ -18,9 +18,9 @@ namespace _20200709
                 Panel3.Visible = true;
                 Panel4.Visible = false;
                 GridView1.DataSourceID = "SqlDataSource2";
-                GridView2.DataSourceID = "SqlDataSource1";
-                
+                GridView2.DataSourceID = "SqlDataSource1";               
             }
+            Label1.Text = Session["account"].ToString();
         }
 
         public void IsButtonEnabled()
@@ -137,6 +137,11 @@ namespace _20200709
         protected void GridView2_DataBound(object sender, EventArgs e)
         {
             IsButtonEnabled2();
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
         }
     }
 }

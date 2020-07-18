@@ -74,7 +74,7 @@
     <Content Include="GeneralCourse.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
-    <Content Include="Selected_Courses.aspx" />
+    <Content Include="UserCourse.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -92,6 +92,14 @@
       <DependentUpon>Administrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data_access.cs" />
+    <Compile Include="EmailCode.cs" />
+    <Compile Include="GeneralCourse.aspx.cs">
+      <DependentUpon>GeneralCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralCourse.aspx.designer.cs">
+      <DependentUpon>GeneralCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

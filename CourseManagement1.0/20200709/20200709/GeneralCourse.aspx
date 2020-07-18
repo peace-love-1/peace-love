@@ -47,9 +47,20 @@
         .auto-style18 {
             font-size: medium;
         }
+         .auto-style20 {
+            width: 458px;
+            height: 128px;
+            position: absolute;
+            left: 1412px;
+            top: 0;
+            margin-bottom: 3px;
+        }
     </style>
 </head>
-<body>
+<body style="background-image: url('image/3.jpg');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div class="auto-style4">
             <br />
@@ -61,6 +72,14 @@
                     <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
+            <div class="auto-style20">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;
+                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">退出登录</asp:LinkButton>
+            </div>
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="auto-style8">
