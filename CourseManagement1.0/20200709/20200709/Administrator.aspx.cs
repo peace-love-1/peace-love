@@ -7,6 +7,11 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 
+//author:林玉琴；
+//create date:20200717
+//update date:20200717
+//description:管理员界面，可以修改选课状态（同意、拒绝），可以对课程信息进行多条件的筛选查询
+
 namespace _20200709
 {
     public partial class Administrator : System.Web.UI.Page
