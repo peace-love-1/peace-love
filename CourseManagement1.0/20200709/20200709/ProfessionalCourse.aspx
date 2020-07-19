@@ -75,7 +75,7 @@
         }
         </style>
 </head>
-<body style="background-image: url('image/3.jpg');
+<body style="background-image: url('image1/3.jpg');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;"">
@@ -131,6 +131,7 @@
                     <asp:DropDownList ID="DropDownList2" runat="server">
                         <asp:ListItem>计算机科学与技术</asp:ListItem>
                         <asp:ListItem>软件工程</asp:ListItem>
+                        <asp:ListItem>计算机类</asp:ListItem>
                     </asp:DropDownList>
                     &nbsp; 年级 
                     <asp:DropDownList ID="DropDownList3" runat="server">

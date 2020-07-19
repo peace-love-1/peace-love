@@ -15,12 +15,12 @@
             width:100%;            
             margin:0; 
             padding:0;
-            background-image:url('image/1.jpg');
+            background-image:url('image1/1.jpg');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;" >
     <form id="form1" runat="server">
-        <asp:Panel ID="Panel1" runat="server" style="z-index: 1; left: 303px; top: 89px; position: absolute; height: 590px; width: 887px; background-image:url('image/2.jpg');" >
+        <asp:Panel ID="Panel1" runat="server" style="z-index: 1; left: 303px; top: 89px; position: absolute; height: 590px; width: 887px; background-image:url('image1/2.jpg');" >
             <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 262px; top: 275px; position: absolute; font-weight: 700;" Text="用户名" BorderStyle="None"></asp:Label>
             <br />
             <br />
