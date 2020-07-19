@@ -63,6 +63,29 @@ namespace _20200709
             }
         }
 
+        //修改数据表中某数据
+        public static string UpdateState(string a, string b)
+        {
+            string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
+            SqlConnection conn = new SqlConnection(connStr);
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("update uc set state='" + a + "' where @courseid='" + b + "'", conn);
+                cmd.Parameters.AddWithValue("@courseid", b);
+                cmd.ExecuteNonQuery();
+                return "1";
+            }
+            catch
+            {
+                return "2";
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
         //查询某数据是否存在，a表示要查询的数据，b表示表中所在列的名字
         public static string QueryData(string a,string b)

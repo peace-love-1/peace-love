@@ -34,6 +34,20 @@ namespace _20200709
 
         }
 
+        //同意
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            string account = Session["account"].ToString(); 
+            int row = ((GridViewRow)((Button)sender).NamingContainer).RowIndex;
+            string courseid = GridView1.Rows[row].Cells[1].Text;
+            string state = "成功";
+            //Data_access.InsertUc(account, id, state);
+            Data_access.UpdateState(state, courseid);
+           // GridView1.DataSourceID = "SqlDataSource4";
+            Button button = (Button)GridView1.Rows[row].FindControl("Button1");
+            button.Enabled = false;
+        }
+
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
@@ -41,6 +55,10 @@ namespace _20200709
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        void CustomersGridView_RowCommand(Object sender, GridViewCommandEventArgs e)
         {
 
         }
@@ -56,18 +74,20 @@ namespace _20200709
         }
 
 
+
         protected void Button5_Click(object sender, EventArgs a)
         {
+            Label10.Text = "";
             string c = "";    //定义空字符串，用来条件查询
             if (TextBox6.Text != "")
             {
-                c = "courseid like '%" + TextBox6.Text + "%'";
+                c += "courseid like '%" + TextBox6.Text + "%'";
                 if (TextBox5.Text != "")
                 {
                     c += " and account like '%" + TextBox5.Text + "%'";
                     if (RadioButtonList1.SelectedIndex != -1)
                     {
-                        c += RadioButtonList1.Text == "未审核" ? " and state='待审核'" : " and state in ('成功','拒绝')";
+                        c += RadioButtonList1.Text == "未审核" ? " and state='待审核'" : " and state in ('成功','失败')";
                     }
                 }
                 else
@@ -80,7 +100,7 @@ namespace _20200709
                         }
                         if (RadioButtonList1.Text == "已审核")
                         {
-                            c += " and state in ('成功','拒绝')";
+                            c += " and state in ('成功','失败')";
                         }
                     }
                 }
@@ -98,7 +118,7 @@ namespace _20200709
                         }
                         if (RadioButtonList1.Text == "已审核")
                         {
-                            c += " and state in ('成功','拒绝')";
+                            c += " and state in ('成功','失败')";
                         }
                     }
                 }
@@ -112,7 +132,7 @@ namespace _20200709
                         }
                         if (RadioButtonList1.Text == "已审核")
                         {
-                            c += "state in ('成功','拒绝')";
+                            c += "state in ('成功','失败')";
                         }
                     }
                 }
@@ -166,7 +186,7 @@ namespace _20200709
                  }*/
 
 
-
+                Label10.Text = c;
                 DataView dv = new DataView(SelectAll()); //调用查询方法
                 dv.RowFilter = c;                                       //设置过滤器（按条件查找）
                 string b = RadioButtonList3.SelectedIndex > 0 ? "DESC" : "ASC";
@@ -177,6 +197,11 @@ namespace _20200709
                 TextBox5.Text = "";
                 RadioButtonList1.SelectedIndex = -1;
             }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Administrator2.aspx");
         }
     }
 }
