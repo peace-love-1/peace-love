@@ -8,6 +8,7 @@ namespace _20200709
     //update date:2020/07/15  description:增加对基本课程表、专业课视图、通识课视图和用户课程视图操作的函数
     //update date:2020/07/16  description:增加InsertUc函数，向选课表中插入用户名、课头号
     //update date:2020/07/17  description:增加DeleteUc函数，删除选课表中的数据
+    //update date:2020/07/18  description:增加 QueryUc、 QueryUc2函数，判断选课状态是否为“待审核”或“成功”和选课状态是否为“成功”
 
     //author: 林玉琴
     //update date:2020/07/15 
@@ -144,11 +145,6 @@ namespace _20200709
             }
         }   
 
-
-
-
-
-
         public static void InsertCourses(string id, string cname, float credit, string remainmax, string tname,
            string schoolyear, int schoolterm, string timeandplace, string remark,
            string academy, string major, string type,int grade)
@@ -267,18 +263,56 @@ namespace _20200709
             }
         }//向选课表中插入用户名、课头号、选课状态
 
-        public static void DeleteUc(string account, string id)
+        public static void DeleteUc(string account, string id,string state)
         {
             using (SqlConnection connection = GetConnection())
             {
                 using (SqlCommand cmd = new SqlCommand
-                ("delete from uc where account=@account and courseid=@courseid", connection))
+                ("delete from uc where account=@account and courseid=@courseid and state=@state", connection))
                 {
                     cmd.Parameters.AddWithValue("@account", account);
                     cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.Parameters.AddWithValue("@state", state);
                     cmd.ExecuteNonQuery();
                 }
             }
         }//删除选课表中的数据
+
+        public static bool QueryUc(string account,string id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from uc where account=@account and courseid=@courseid and (state=@state1 or state=@state2)";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@account", account);
+                    cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.Parameters.AddWithValue("@state1","待审核" );
+                    cmd.Parameters.AddWithValue("@state2", "成功");
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+        }//选课状态是否为“待审核”或“成功”
+
+        public static bool QueryUc2(string account, string id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from uc where account=@account and courseid=@courseid and state=@state";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@account", account);
+                    cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.Parameters.AddWithValue("@state", "成功");
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+        }//选课状态是否为“成功”
     }
 }

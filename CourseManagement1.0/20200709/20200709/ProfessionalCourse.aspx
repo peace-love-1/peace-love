@@ -54,9 +54,31 @@
             font-size: x-large;
             font-weight: bold;
         }
+        .auto-style16 {
+            font-family: Arial;
+            font-size: large;
+        }
+        .auto-style17 {
+            font-family: Arial;
+            font-size: medium;
+        }
+        .auto-style18 {
+            font-size: medium;
+        }
+        .auto-style20 {
+            width: 458px;
+            height: 128px;
+            position: absolute;
+            left: 1412px;
+            top: 0;
+            margin-bottom: 3px;
+        }
         </style>
 </head>
-<body>
+<body style="background-image: url('image/3.jpg');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div class="auto-style8">
             <asp:TreeView ID="TreeView1" runat="server" Height="101px" Width="126px">
@@ -67,6 +89,14 @@
                     <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
+            <div class="auto-style20">
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;
+                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">退出登录</asp:LinkButton>
+            </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="auto-style14">
@@ -135,7 +165,7 @@
                 </div>
             </asp:Panel>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="941px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="941px" OnDataBound="GridView1_DataBound">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -186,8 +216,9 @@
             </asp:SqlDataSource>
             <div class="auto-style10">
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">选课申请单（专业课）</span><br />
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="16px" Width="347px">
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">选课申请单（专业课）<br />
+                </span><br />
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="16px" Width="347px" OnDataBound="GridView2_DataBound">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -216,7 +247,10 @@
                         <asp:Parameter DefaultValue="专业课" Name="type" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
+                &nbsp; <font class="auto-style16" color="#ff0000" name="promptTitle" style="margin: 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
                 <br />
+                <br />
+                <span class="auto-style18">提示:</span></font><span class="auto-style17" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; background-color: rgb(255, 255, 255)">&nbsp;</span><span class="auto-style17" name="promptTaxt" style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">选课成功的部分已存在于您的课表中，请确认！</span><br />
                 <br />
             </div>
             <br />

@@ -17,9 +17,20 @@
         .auto-style3 {
             margin-left: 309px;
         }
+         .auto-style5 {
+            width: 458px;
+            height: 128px;
+            position: absolute;
+            left: 1412px;
+            top: 0;
+            margin-bottom: 3px;
+        }
     </style>
 </head>
-<body>
+<body style="background-image: url('image/3.jpg');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div>
             <asp:TreeView ID="TreeView1" runat="server">
@@ -30,6 +41,13 @@
                     </asp:TreeNode>
                 </Nodes>
             </asp:TreeView>
+            <div class="auto-style5">
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">退出登录</asp:LinkButton>
+            </div>
             <br />
             <asp:Panel ID="Panel1" runat="server">
                 <div class="auto-style2">
@@ -72,12 +90,13 @@
                     <asp:BoundField DataField="cname" HeaderText="课程名" SortExpression="cname" />
                     <asp:BoundField DataField="credit" HeaderText="学分" SortExpression="credit" />
                     <asp:BoundField DataField="school" HeaderText="学校" SortExpression="school" />
-                    <asp:BoundField DataField="academy" HeaderText="授课学院" SortExpression="academy" />
+                    <asp:BoundField DataField="type" HeaderText="类型" SortExpression="type" />
+                    <asp:BoundField DataField="academy" HeaderText="学院" SortExpression="academy" />
                     <asp:BoundField DataField="major" HeaderText="专业" SortExpression="major" />
                     <asp:BoundField DataField="tname" HeaderText="教师名" SortExpression="tname" />
                     <asp:TemplateField HeaderText="操作">
                         <ItemTemplate>
-                            <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="Select" OnClick="Button1_Click1" Text="撤课" />
+                            <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="Select" OnClick="Button1_Click2" Text="撤课" OnClientClick="return confirm('是否确定撤掉该课程吗？')" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -92,13 +111,13 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [school], [academy], [major], [tname] FROM [ucourses] WHERE (([schoolyear] = @schoolyear) AND ([schoolterm] = @schoolterm))">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [school], [type], [academy], [major], [tname] FROM [ucourses] WHERE (([schoolyear] = @schoolyear) AND ([schoolterm] = @schoolterm))">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="DropDownList1" Name="schoolyear" PropertyName="SelectedValue" Type="String" />
                     <asp:ControlParameter ControlID="DropDownList2" Name="schoolterm" PropertyName="SelectedValue" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [school], [academy], [major], [tname] FROM [ucourses] WHERE (([school] = @school) AND ([schoolyear] = @schoolyear) AND ([schoolterm] = @schoolterm))">
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [school], [type], [academy], [major], [tname] FROM [ucourses] WHERE (([school] = @school) AND ([schoolyear] = @schoolyear) AND ([schoolterm] = @schoolterm))">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="DropDownList3" Name="school" PropertyName="SelectedValue" Type="String" />
                     <asp:ControlParameter ControlID="DropDownList1" Name="schoolyear" PropertyName="SelectedValue" Type="String" />
