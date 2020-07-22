@@ -70,14 +70,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddCourse.aspx" />
+    <Content Include="Administrator.aspx" />
+    <Content Include="DeleteCourse.aspx" />
     <Content Include="image1\1.jpg" />
     <Content Include="image1\2.jpg" />
     <Content Include="image1\3.jpg" />
-    <Content Include="Administrator.aspx" />
-    <Content Include="Administrator2.aspx" />
     <Content Include="GeneralCourse.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
+    <Content Include="UpdateCourse.aspx" />
     <Content Include="UserCourse.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
@@ -88,6 +90,13 @@
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCourse.aspx.cs">
+      <DependentUpon>AddCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCourse.aspx.designer.cs">
+      <DependentUpon>AddCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrator.aspx.cs">
       <DependentUpon>Administrator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,14 +104,14 @@
     <Compile Include="Administrator.aspx.designer.cs">
       <DependentUpon>Administrator.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administrator2.aspx.cs">
-      <DependentUpon>Administrator2.aspx</DependentUpon>
+    <Compile Include="Data_access.cs" />
+    <Compile Include="DeleteCourse.aspx.cs">
+      <DependentUpon>DeleteCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administrator2.aspx.designer.cs">
-      <DependentUpon>Administrator2.aspx</DependentUpon>
+    <Compile Include="DeleteCourse.aspx.designer.cs">
+      <DependentUpon>DeleteCourse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Data_access.cs" />
     <Compile Include="EmailCode.cs" />
     <Compile Include="GeneralCourse.aspx.cs">
       <DependentUpon>GeneralCourse.aspx</DependentUpon>
@@ -143,6 +152,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateCourse.aspx.cs">
+      <DependentUpon>UpdateCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateCourse.aspx.designer.cs">
+      <DependentUpon>UpdateCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserCourse.aspx.cs">
       <DependentUpon>UserCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,7 +168,6 @@
     </Compile>
     <Compile Include="VerificationCode.aspx.cs">
       <DependentUpon>VerificationCode.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerificationCode.aspx.designer.cs">
       <DependentUpon>VerificationCode.aspx</DependentUpon>

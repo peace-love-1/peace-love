@@ -6,21 +6,57 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 0px;
+        }
+        .auto-style2 {
+            text-align: center;
+        }
+        .auto-style3 {
+            margin-left: 210px;
+        }
+    </style>
 </head>
-<body style="height: 742px">
+<body>
     <form id="form1" runat="server">
-        <div style="height: 747px">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CellPadding="4" ForeColor="#333333" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="z-index: 1; left: 27px; top: 125px; position: absolute; height: 624px; width: 1023px" PageSize="15">
+        <div>
+&nbsp;peace&amp;love Course Management Platform&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">退出登录</asp:LinkButton>
+            <br />
+        </div>
+        <div>
+            <asp:Button ID="Button2" runat="server" Height="26px" Text="发布课程" Width="109px" OnClick="Button2_Click" />
+            <asp:Button ID="Button3" runat="server" Text="删除课程" Width="115px" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" Text="修改课程" Width="115px" OnClick="Button4_Click" />
+        </div>
+        <div class="auto-style2">
+            <br />
+            课头号：<asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="120px"></asp:TextBox>
+&nbsp;用户名：<asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="141px"></asp:TextBox>
+&nbsp;选课状态：<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="25px" Width="145px">
+                <asp:ListItem>待审核</asp:ListItem>
+                <asp:ListItem>成功</asp:ListItem>
+                <asp:ListItem>失败</asp:ListItem>
+            </asp:DropDownList>
+&nbsp;&nbsp;
+            <asp:Button ID="Button1" runat="server" Height="28px" OnClick="Button1_Click" Text="查询" />
+            <br />
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="340px" OnDataBound="GridView1_DataBound" Width="904px" CssClass="auto-style3">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:TemplateField ShowHeader="False">
+                    <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
+                    <asp:BoundField DataField="cname" HeaderText="课程名" SortExpression="cname" />
+                    <asp:BoundField DataField="account" HeaderText="用户名" SortExpression="account" />
+                    <asp:BoundField DataField="state" HeaderText="选课状态" SortExpression="state" />
+                    <asp:TemplateField HeaderText="操作">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandName="" Text="同意"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandName="Select" OnClick="LinkButton1_Click" Text="同意"></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField ShowHeader="False">
+                    <asp:TemplateField HeaderText="操作">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="false" CommandName="" Text="拒绝"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="false" CommandName="Select" OnClick="LinkButton2_Click" Text="拒绝"></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -35,29 +71,59 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" CellPadding="15" RepeatDirection="Horizontal" style="z-index: 1; left: 1092px; top: 475px; position: absolute; height: 27px; width: 259px">
-                <asp:ListItem>未审核</asp:ListItem>
-                <asp:ListItem>已审核</asp:ListItem>
-            </asp:RadioButtonList>
-            <asp:RadioButtonList ID="RadioButtonList2" runat="server" CellPadding="15" CellSpacing="3" style="z-index: 1; left: 1091px; top: 521px; position: absolute; height: 27px; width: 388px">
-                <asp:ListItem>按用户名排序</asp:ListItem>
-                <asp:ListItem>按课头号排序</asp:ListItem>
-                <asp:ListItem>按审核状态排序</asp:ListItem>
-            </asp:RadioButtonList>
-            <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 1106px; top: 139px; position: absolute" Text="请输入要查询的课头号"></asp:Label>
-            <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 1109px; top: 291px; position: absolute" Text="请输入要查询的用户名"></asp:Label>
-            <asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 1109px; top: 336px; position: absolute; height: 39px; width: 256px"></asp:TextBox>
-            <asp:Button ID="Button4" runat="server" style="z-index: 1; left: 42px; top: 44px; position: absolute; height: 55px; width: 118px" Text="课程修改" OnClick="Button4_Click" />
-            <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 1111px; top: 237px; position: absolute"></asp:Label>
-            <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 1112px; top: 391px; position: absolute"></asp:Label>
-            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" style="z-index: 1; left: 1129px; top: 695px; position: absolute; height: 57px; width: 170px; font-size: xx-large; font-weight: 700" Text="查询" />
-            <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatDirection="Horizontal" style="z-index: 1; left: 1108px; top: 443px; position: absolute; height: 27px; width: 252px">
-                <asp:ListItem>升序</asp:ListItem>
-                <asp:ListItem>降序</asp:ListItem>
-            </asp:RadioButtonList>
-            <asp:TextBox ID="TextBox6" runat="server" style="z-index: 1; left: 1104px; top: 177px; position: absolute; height: 37px; width: 274px"></asp:TextBox>
-            <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 370px; top: 41px; position: absolute" Text="Label"></asp:Label>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [account], [state] FROM [application2] WHERE (([state] = @state) AND ([id] = @id)) ORDER BY [account]">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="state" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox1" Name="id" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [account], [state] FROM [application2] WHERE (([state] = @state) AND ([id] = @id) AND ([account] = @account))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="state" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox1" Name="id" PropertyName="Text" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox2" Name="account" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [account], [state] FROM [application2] WHERE (([state] = @state) AND ([account] = @account)) ORDER BY [id]">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="state" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox2" Name="account" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [account], [state] FROM [application2] WHERE ([state] = @state)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="state" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

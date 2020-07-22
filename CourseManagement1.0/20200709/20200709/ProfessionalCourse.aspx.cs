@@ -8,6 +8,7 @@ namespace _20200709
     //create date:2020/07/16  description:专业课选课界面，可以进行查询课程、选课操作
     //update date:2020/07/17  description:增加选课申请表功能
     //update date:2020/07/18  description:实现选课按钮的可用与不可用之间的转换
+
     public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -29,13 +30,13 @@ namespace _20200709
             {
                 string account = Session["account"].ToString();
                 string id = GridView1.Rows[i].Cells[0].Text;
-                if (Data_access.QueryUc(account, id))
+                if (Data_access.QueryUc1(account, id))
                 {
                     Button button = (Button)GridView1.Rows[i].FindControl("Button1");
                     button.Enabled = false;
                 }
-            }//遍历gridview1中的课程，若是已经选过课（包括已经选上和选课申请）则选课按钮不可用
-        }
+            }
+        }//遍历gridview1中的课程，若是已经选过课（包括已经选上和选课申请）则选课按钮不可用
 
         public void IsButtonEnabled2()
         {
@@ -44,13 +45,15 @@ namespace _20200709
             {
                 string account = Session["account"].ToString();
                 string id = GridView2.Rows[i].Cells[0].Text;
-                if (Data_access.QueryUc2(account, id))
+                string state = GridView2.Rows[i].Cells[2].Text;
+                //if (Data_access.QueryUc2(account, id))
+                if (state == "成功")
                 {
                     LinkButton linkbutton = (LinkButton)GridView2.Rows[i].FindControl("LinkButton1");
                     linkbutton.Enabled = false;
                 }
-            }//页面加载时遍历gridview2中的选课申请，若是选课状态为成功，则删除按钮不可用
-        }
+            }
+        }//页面加载时遍历gridview2中的选课申请，若是选课状态为成功，则删除按钮不可用
 
         //通过选择不同的radiobutton显示不同组控件进行查询
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
