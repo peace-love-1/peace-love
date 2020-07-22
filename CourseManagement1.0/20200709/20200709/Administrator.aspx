@@ -16,13 +16,27 @@
         .auto-style3 {
             margin-left: 210px;
         }
+        .auto-style4 {
+            position: absolute;
+            top: 15px;
+            left: 1739px;
+            z-index: 1;
+            width: 102px;
+        }
+        .auto-style5 {
+            position: absolute;
+            top: 15px;
+            left: 10px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-&nbsp;peace&amp;love Course Management Platform&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">退出登录</asp:LinkButton>
+            <asp:Label ID="Label1" runat="server" CssClass="auto-style5" style="z-index: 1" Text="peace&amp;love Course Management Platform"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" CssClass="auto-style4">退出登录</asp:LinkButton>
             <br />
         </div>
         <div>

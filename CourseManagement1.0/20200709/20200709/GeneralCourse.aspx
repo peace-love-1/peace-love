@@ -75,7 +75,7 @@
             <div class="auto-style20">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 &nbsp;
                 <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">退出登录</asp:LinkButton>

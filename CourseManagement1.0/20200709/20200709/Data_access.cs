@@ -11,7 +11,7 @@ namespace _20200709
     //update date:2020/07/17  description:增加DeleteUc函数，删除选课表中的数据
     //update date:2020/07/18  description:增加QueryUc1、 QueryUc2函数，判断选课状态是否为“待审核”或“成功”和选课状态是否为“成功”
     //update date:2020/07/21  description:增加UpdateUc1、UpdateUc2、DeleteCourses、QueryCourseId函数,将选课状态修改为“成功”或“失败”
-    //update date:2020/07/22  description:增加QueryCourses、UpdateCourses1、UpdateCourses2
+    //update date:2020/07/22  description:增加QueryCourses、UpdateCourses1、UpdateCourses2函数
 
     //author: 林玉琴
     //update date:2020/07/15 
@@ -330,7 +330,7 @@ namespace _20200709
         public static SqlDataReader QueryGcourseCname(string cname)
         {
                SqlConnection connection = GetConnection();
-                string stm = "select * from gcourses where cname=@cname";
+                string stm = "select * from gcourses where cname like '%' + @cname + '%'";
                 using (SqlCommand cmd = new SqlCommand(stm, connection))
                 {
                     cmd.Parameters.AddWithValue("@cname", cname);
@@ -338,7 +338,7 @@ namespace _20200709
                     return reader;
                 }
             
-        }//按课程名查询通用课课程信息
+        }//按课程名模糊查询通用课课程信息
 
         public static SqlDataReader QueryGcourseTname(string tname)
         {
