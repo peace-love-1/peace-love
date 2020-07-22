@@ -133,5 +133,10 @@ namespace _20200709
         {
             Server.Transfer("Login.aspx");
         }
+
+        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

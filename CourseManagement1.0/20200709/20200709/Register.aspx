@@ -10,22 +10,6 @@
         #form1 {
             height: 1166px;
         }
-        .auto-style1 {
-            z-index: 1;
-            left: 449px;
-            top: 464px;
-            position: absolute;
-            width: 72px;
-            text-decoration: underline;
-        }
-        .auto-style3 {
-            z-index: 1;
-            left: 337px;
-            top: 454px;
-            position: absolute;
-            height: 38px;
-            width: 72px;
-        }
         .auto-style4 {
             z-index: 1;
             left: 332px;
@@ -35,46 +19,63 @@
         }
     </style>
 </head>
-<body>
+<body  style="height: 100%;
+            width:100%;            
+            margin:0;      
+            padding:0;
+            background-image:url('image1/register2.jpg');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;">
     <form id="form1" runat="server">
-        <asp:Panel ID="Panel1" runat="server" style="z-index: 1; left: 359px; top: 101px; position: absolute; height: 606px; width: 879px; text-align: center">
-            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 233px; top: 100px; position: absolute" Text="用户名"></asp:Label>
-
-            <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 247px; top: 164px; position: absolute" Text="密码"></asp:Label>
-            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 208px; top: 235px; position: absolute" Text="确认密码"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 330px; top: 91px; position: absolute; height: 31px; width: 196px" OnTextChanged="TextBox1_TextChanged" AutoPostBack="True"></asp:TextBox>
-            <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 329px; top: 158px; position: absolute; height: 33px; width: 198px" OnTextChanged="TextBox2_TextChanged" AutoPostBack="True"></asp:TextBox>
-            <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 327px; top: 226px; position: absolute; height: 33px; width: 201px" OnTextChanged="TextBox3_TextChanged" AutoPostBack="True"></asp:TextBox>
-            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="注册" CssClass="auto-style3" />
-            <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 564px; top: 97px; position: absolute"></asp:Label>
-            <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 566px; top: 165px; position: absolute"></asp:Label>
-            <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 566px; top: 230px; position: absolute"></asp:Label>
-            <asp:Label ID="Label7" runat="server" CssClass="auto-style4"></asp:Label>
+        <asp:Panel ID="Panel1" runat="server" style="z-index: 1; left: 45%; top: 10%; position: absolute; height: 80%; width: 55%;" >
+            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 25%; top: 32.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="用户名"></asp:Label>
+            <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 28.5%; top: 44.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="密码"></asp:Label>
+            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 21%; top: 56.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="确认密码"></asp:Label>
+           
+            <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 39%; top: 30%; position: absolute; height: 10%; width: 35%;
+background-image:url('image1/5.jpg');background-size: 100% 100%;background-repeat:no-repeat;text-indent:1em; font-size: 24pt; font-family: 宋体; 
+font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None" ToolTip="用户名不得超过15位" OnTextChanged="TextBox1_TextChanged" AutoPostBack="True"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 39%; top: 42%; position: absolute; height: 10%; width: 35%; 
+background-image:url('image1/5.jpg');background-size: 100% 100%;background-repeat:no-repeat;text-indent:1em; font-size: 24pt; font-family: 宋体; 
+font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None" ToolTip="密码不得超过20位" OnTextChanged="TextBox2_TextChanged" AutoPostBack="True"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 39%; top: 54%; position: absolute; height: 10%; width: 35%;
+background-image:url('image1/5.jpg');background-size: 100% 100%;background-repeat:no-repeat;text-indent:1em; font-size: 24pt; font-family: 宋体; 
+font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None" ToolTip="请确认两次密码是否一致" OnTextChanged="TextBox3_TextChanged" AutoPostBack="True"></asp:TextBox>
+           
+            <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 76%; top: 33%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
+            <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 76%; top: 45%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
+            <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 76%; top: 57%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
+            <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 50%; top: 100%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
             &nbsp;&nbsp;&nbsp;
             <br />
             <br />
             <br />
             <br />
-            <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 243px; top: 311px; position: absolute" Text="邮箱"></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 327px; top: 302px; position: absolute; height: 33px; width: 140px"></asp:TextBox>
+            <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 28.5%; top: 68.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="邮箱"></asp:Label>
+            <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 39%; top:66%; position: absolute; height: 10%; width: 25%;
+background-image:url('image1/5.jpg');background-size: 100% 100%;background-repeat:no-repeat;text-indent:1em; font-size: 24pt; font-family: 宋体; 
+font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None" ToolTip="请输入邮箱"></asp:TextBox>
             <br />
             <br />
             <br />
-            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" style="z-index: 1; left: 483px; top: 303px; position: absolute; height: 35px; width: 50px;" Text="发送" />
+            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" style="z-index: 1; left: 65%; top: 66%; position: absolute; height: 10%; width: 8%; font-size: 24pt; font-family: 楷体;" Text="发送" BackColor="#51C4C9" BorderColor="#56C6CB" BorderStyle="None" />
             <br />
-            <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 189px; top: 377px; position: absolute" Text="邮箱验证码"></asp:Label>
-            <br />
-            <br />
+            <asp:Label ID="Label9" runat="server" style="z-index: 1; left:25%; top: 80.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="验证码"></asp:Label>
             <br />
             <br />
-            <asp:Label ID="Label11" runat="server" style="z-index: 1; left: 570px; top: 374px; position: absolute"></asp:Label>
             <br />
-            &nbsp;&nbsp;<asp:Button ID="Button4" runat="server" BackColor="White" BorderColor="White" BorderStyle="None" CssClass="auto-style1" OnClick="Button4_Click" Text="返回" />
+            <br />
+            <asp:Label ID="Label11" runat="server" style="z-index: 1; left: 76%; top: 81%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
+            <br />
+            &nbsp;&nbsp;<asp:Button ID="Button4" runat="server" BackColor="#60C9CD" BorderColor="#52C4C9" BorderStyle="None" OnClick="Button4_Click" Text="返回" style="z-index: 1;left:60%; top: 94%; position: absolute; font-size: 14pt; font-family: 楷体; text-decoration: underline" />
             &nbsp;&nbsp;
             <br />
-            &nbsp;<asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 328px; top: 364px; position: absolute; height: 31px; width: 195px" OnTextChanged="TextBox5_TextChanged" AutoPostBack="True"></asp:TextBox>
-            <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 569px; top: 306px; position: absolute"></asp:Label>
-            <asp:Label ID="Label12" runat="server" style="z-index: 1; left: 612px; top: 514px; position: absolute"></asp:Label>
+            &nbsp;<asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left:39%; top: 78%; position: absolute; height: 10%; width: 35%;
+background-image:url('image1/5.jpg');background-size: 100% 100%;background-repeat:no-repeat;text-indent:1em; font-size: 24pt; font-family: 宋体; 
+font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None" ToolTip="请输入邮箱验证码" OnTextChanged="TextBox5_TextChanged" AutoPostBack="True"></asp:TextBox>
+            <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 76%; top: 69%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
+            <asp:Button ID="Button3" runat="server" BackColor="#57C6CA" BorderColor="#51C4CA" BorderStyle="None" OnClick="Button3_Click" style="z-index: 1; left: 40%; top: 92%; position: absolute; height: 42px; width: 96px;font-size: 24pt; font-weight: 700; font-family: 楷体" Text="注册" />
         </asp:Panel>
     </form>
 </body>

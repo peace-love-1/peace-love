@@ -15,6 +15,7 @@ namespace _20200709
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
@@ -24,7 +25,6 @@ namespace _20200709
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private bool VCodeCheck()//判断验证码输入是否正确
@@ -103,5 +103,11 @@ namespace _20200709
         {
             Server.Transfer("Administrator.aspx");
         }
+
+        protected void TextBox1_TextChanged1(object sender, EventArgs e)
+        {
+           
+        }
+
     }
 }

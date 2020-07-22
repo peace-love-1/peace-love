@@ -15,13 +15,14 @@
         }
         .auto-style4 {
             width: 1261px;
+            height: 722px;
         }
         .auto-style5 {
-            width: 688px;
-            height: 637px;
+            width: 377px;
+            height: 458px;
             position: absolute;
-            left: 1079px;
-            top: 145px;
+            left: 986px;
+            top: 243px;
         }
         .auto-style6 {
             font-size: x-large;
@@ -44,34 +45,23 @@
             font-family: Arial;
             font-size: medium;
         }
-        .auto-style18 {
-            font-size: medium;
-        }
          .auto-style20 {
             width: 458px;
             height: 128px;
             position: absolute;
-            left: 1412px;
-            top: 0;
+            left: 36px;
+            top: 46px;
             margin-bottom: 3px;
         }
     </style>
 </head>
-<body style="background-image: url('image1/3.jpg');
+<body style="background-image: url('image1/333.jpg');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div class="auto-style4">
             <br />
-            <asp:TreeView ID="TreeView1" runat="server">
-                <Nodes>
-                    <asp:TreeNode Text="选课" Value="选课">
-                        <asp:TreeNode NavigateUrl="~/ProfessionalCourse.aspx" Text="专业课" Value="专业课"></asp:TreeNode>
-                    </asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
-                </Nodes>
-            </asp:TreeView>
             <div class="auto-style20">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
@@ -103,7 +93,17 @@
                 <br />
                 <br />
             </div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style3" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="978px" OnDataBound="GridView1_DataBound">
+            <span class="auto-style17" name="promptTaxt" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+            <asp:TreeView ID="TreeView1" runat="server" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                <Nodes>
+                    <asp:TreeNode Text="选课" Value="选课">
+                        <asp:TreeNode NavigateUrl="~/ProfessionalCourse.aspx" Text="专业课" Value="专业课"></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
+                </Nodes>
+            </asp:TreeView>
+            </span>
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style3" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="893px" OnDataBound="GridView1_DataBound" Height="508px">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -183,7 +183,8 @@
                 <br />
                 <font class="auto-style16" color="#ff0000" name="promptTitle" style="margin: 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
                 <br />
-                <span class="auto-style18">提示:</span></font><span class="auto-style17" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; background-color: rgb(255, 255, 255)">&nbsp;</span><span class="auto-style17" name="promptTaxt" style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">选课成功的部分已存在于您的课表中，请确认！</span></div>
+                <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 0px; top: 322px; position: absolute; text-align: left" Text="提示:&nbsp;选课成功的部分已存在于您的课表中，请确认！"></asp:Label>
+                </font></div>
             <br />
             <br />
         </div>
