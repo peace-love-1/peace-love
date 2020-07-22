@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.EnterpriseServices;
 
 namespace _20200709
 {
@@ -8,7 +9,9 @@ namespace _20200709
     //update date:2020/07/15  description:增加对基本课程表、专业课视图、通识课视图和用户课程视图操作的函数
     //update date:2020/07/16  description:增加InsertUc函数，向选课表中插入用户名、课头号
     //update date:2020/07/17  description:增加DeleteUc函数，删除选课表中的数据
-    //update date:2020/07/18  description:增加 QueryUc、 QueryUc2函数，判断选课状态是否为“待审核”或“成功”和选课状态是否为“成功”
+    //update date:2020/07/18  description:增加QueryUc1、 QueryUc2函数，判断选课状态是否为“待审核”或“成功”和选课状态是否为“成功”
+    //update date:2020/07/21  description:增加UpdateUc1、UpdateUc2、DeleteCourses、QueryCourseId函数,将选课状态修改为“成功”或“失败”
+    //update date:2020/07/22  description:增加QueryCourses、UpdateCourses1、UpdateCourses2函数
 
     //author: 林玉琴
     //update date:2020/07/15 
@@ -143,36 +146,155 @@ namespace _20200709
                     }
                 }
             }
-        }   
+        }
 
-        public static void InsertCourses(string id, string cname, float credit, string remainmax, string tname,
-           string schoolyear, int schoolterm, string timeandplace, string remark,
-           string academy, string major, string type,int grade)
+
+
+        public static bool QueryCourses(string id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                string stm = "select * from bcourses where id=@id";
+                using (SqlCommand cmd = new SqlCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }//查询课程信息是否存在
+
+        public static void InsertCourses1(string id, string cname, double credit, string tname,
+          string academy, string major, int grade, string schoolyear, int schoolterm, string type,string school)
         {
             using (SqlConnection connection = GetConnection())
             {
                 using (SqlCommand cmd = new SqlCommand
-                ("insert into bcourses(id,cname,credit,[remain/max],tname,schoolyear,schoolterm,timeandplace,remark，academy，major,type,grade)" +
-                " values(@id,@cname,@credit,@[remain/max],@tname，@schoolyear,@schoolterm,@timeandplace,@remark,@academy,@major.@type,@grade)", connection))
+                ("insert into bcourses(id,cname,credit,tname,academy,major,grade,schoolyear,schoolterm,type,school)" +
+                " values(@id,@cname,@credit,@tname,@academy,@major,@grade,@schoolyear,@schoolterm,@type,@school)", connection))
                 {
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@cname", cname);
                     cmd.Parameters.AddWithValue("@credit", credit);
-                    cmd.Parameters.AddWithValue("@[remain/max]", remainmax);
                     cmd.Parameters.AddWithValue("@tname", tname);
                     cmd.Parameters.AddWithValue("@schoolyear", schoolyear);
                     cmd.Parameters.AddWithValue("@schoolterm", schoolterm);
-                    cmd.Parameters.AddWithValue("@timeandplace", timeandplace);
-                    cmd.Parameters.AddWithValue("@remark", remark);
                     cmd.Parameters.AddWithValue("@academy", academy);
                     cmd.Parameters.AddWithValue("@major", major);
                     cmd.Parameters.AddWithValue("@type", type);
                     cmd.Parameters.AddWithValue("@grade", grade);
+                    cmd.Parameters.AddWithValue("@school", school);
                     cmd.ExecuteNonQuery();
                 }
             }
-        } //插入爬虫爬取的课程信息
+        } //插入专业课课程信息
+
+        public static void InsertCourses2(string id, string cname, double credit, string tname,
+         string academy, string schoolyear, int schoolterm, string type,string school)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("insert into bcourses(id,cname,credit,tname,academy,schoolyear,schoolterm,type,school)" +
+                " values(@id,@cname,@credit,@tname,@academy,@schoolyear,@schoolterm,@type,@school)", connection))
+                {
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@cname", cname);
+                    cmd.Parameters.AddWithValue("@credit", credit);
+                    cmd.Parameters.AddWithValue("@tname", tname);
+                    cmd.Parameters.AddWithValue("@schoolyear", schoolyear);
+                    cmd.Parameters.AddWithValue("@schoolterm", schoolterm);
+                    cmd.Parameters.AddWithValue("@academy", academy);
+                    cmd.Parameters.AddWithValue("@type", type);
+                    cmd.Parameters.AddWithValue("@school", school);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        } //插入通识课课程信息
+
+        public static void UpdateCourses1(string id, string cname, double credit, string tname,
+          string academy, string major, int grade, string schoolyear, int schoolterm,string school)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("update bcourses set cname=@cname,credit=@credit,tname=@tname,academy=@academy,major=@major," +
+                "grade=@grade,schoolyear=@schoolyear,schoolterm=@schoolterm,school=@school where id=@id", connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@cname", cname);
+                    cmd.Parameters.AddWithValue("@credit", credit);
+                    cmd.Parameters.AddWithValue("@tname", tname);
+                    cmd.Parameters.AddWithValue("@schoolyear", schoolyear);
+                    cmd.Parameters.AddWithValue("@schoolterm", schoolterm);
+                    cmd.Parameters.AddWithValue("@academy", academy);
+                    cmd.Parameters.AddWithValue("@major", major);
+                    cmd.Parameters.AddWithValue("@grade", grade);
+                    cmd.Parameters.AddWithValue("@school", school);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//修改专业课课程信息
+
+        public static void UpdateCourses2(string id, string cname, double credit, string tname,
+          string academy, string schoolyear, int schoolterm,string school)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("update bcourses set cname=@cname,credit=@credit,tname=@tname,academy=@academy," +
+                "schoolyear=@schoolyear,schoolterm=@schoolterm,school=@school where id=@id", connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@cname", cname);
+                    cmd.Parameters.AddWithValue("@credit", credit);
+                    cmd.Parameters.AddWithValue("@tname", tname);
+                    cmd.Parameters.AddWithValue("@schoolyear", schoolyear);
+                    cmd.Parameters.AddWithValue("@schoolterm", schoolterm);
+                    cmd.Parameters.AddWithValue("@academy", academy);
+                    cmd.Parameters.AddWithValue("@school", school);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//修改通识课课程信息
+
+        public static void DeleteCourses(string id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("delete from bcourses where id=@id", connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//根据课头号删除课程信息
+
+        public static SqlDataReader QueryCourseId(string id)
+        {
+            SqlConnection connection = GetConnection();
+            string stm = "select * from bcourses where id=@id";
+            using (SqlCommand cmd = new SqlCommand(stm, connection))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                return reader;
+            }
+        }//根据课头号查询课程信息
+
+
 
         public static SqlDataReader QueryPcourseMajor(string academy,string major,int grade)
         {
@@ -208,7 +330,7 @@ namespace _20200709
         public static SqlDataReader QueryGcourseCname(string cname)
         {
                SqlConnection connection = GetConnection();
-                string stm = "select * from gcourses where cname=@cname";
+                string stm = "select * from gcourses where cname like '%' + @cname + '%'";
                 using (SqlCommand cmd = new SqlCommand(stm, connection))
                 {
                     cmd.Parameters.AddWithValue("@cname", cname);
@@ -216,7 +338,7 @@ namespace _20200709
                     return reader;
                 }
             
-        }//按课程名查询通用课课程信息
+        }//按课程名模糊查询通用课课程信息
 
         public static SqlDataReader QueryGcourseTname(string tname)
         {
@@ -278,7 +400,7 @@ namespace _20200709
             }
         }//删除选课表中的数据
 
-        public static bool QueryUc(string account,string id)
+        public static bool QueryUc1(string account,string id)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -314,5 +436,35 @@ namespace _20200709
                 }
             }
         }//选课状态是否为“成功”
+
+        public static void UpdateUc1(string account, string id,string state)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("update uc set state='成功' where account=@account and courseid=@courseid and state=@state", connection))
+                {
+                    cmd.Parameters.AddWithValue("@account", account);
+                    cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.Parameters.AddWithValue("@state", state);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//将选课状态修改为成功
+
+        public static void UpdateUc2(string account, string id, string state)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand
+                ("update uc set state='失败' where account=@account and courseid=@courseid and state=@state", connection))
+                {
+                    cmd.Parameters.AddWithValue("@account", account);
+                    cmd.Parameters.AddWithValue("@courseid", id);
+                    cmd.Parameters.AddWithValue("@state", state);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }//将选课状态修改为失败
     }
 }

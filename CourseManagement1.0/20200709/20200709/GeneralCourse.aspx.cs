@@ -32,7 +32,7 @@ namespace _20200709
             {
                 string account = Session["account"].ToString();
                 string id = GridView1.Rows[i].Cells[0].Text;
-                if (Data_access.QueryUc(account, id))
+                if (Data_access.QueryUc1(account, id))
                 {
                     Button button = (Button)GridView1.Rows[i].FindControl("Button1");
                     button.Enabled = false;
@@ -47,7 +47,9 @@ namespace _20200709
             {
                 string account = Session["account"].ToString();
                 string id = GridView2.Rows[i].Cells[0].Text;
-                if (Data_access.QueryUc2(account, id))
+                string state = GridView2.Rows[i].Cells[2].Text;
+                //if (Data_access.QueryUc2(account, id))
+                if (state=="成功")
                 {
                     LinkButton linkbutton = (LinkButton)GridView2.Rows[i].FindControl("LinkButton1");
                     linkbutton.Enabled = false;
