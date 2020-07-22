@@ -6,6 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
 
+
+//author:林玉琴
+//create date:2020/07/15
+//update date:2020/07/15
+//description:验证码的生成
 namespace _20200709
 {
     public partial class VerificationCode : System.Web.UI.Page
