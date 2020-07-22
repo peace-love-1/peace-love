@@ -84,6 +84,9 @@
     <Content Include="GeneralCourse.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
+    <Content Include="image1\334.jpg" />
+    <Content Include="image1\334.png" />
+    <Content Include="image1\335.jpg" />
     <Content Include="UserCourse.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
@@ -179,6 +182,7 @@
     </Compile>
     <Compile Include="VerificationCode.aspx.cs">
       <DependentUpon>VerificationCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerificationCode.aspx.designer.cs">
       <DependentUpon>VerificationCode.aspx</DependentUpon>

@@ -7,15 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            font-size: x-large;
-            font-weight: bold;
-        }
         .auto-style2 {
             text-align: center;
         }
         .auto-style3 {
-            margin-left: 309px;
+            margin-left: 379px;
+            font-size: 14pt;
         }
          .auto-style5 {
             width: 458px;
@@ -25,65 +22,77 @@
             top: 0;
             margin-bottom: 3px;
         }
+        .auto-style6 {
+            font-size: 28pt;
+            font-weight: bold;
+        }
+        .auto-style7 {
+            font-size: 20pt;
+        }
     </style>
 </head>
-<body style="background-image: url('image1/3.jpg');
+<body style="background-image: url('image1/335.jpg');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div>
-            <asp:TreeView ID="TreeView1" runat="server">
-                <Nodes>
-                    <asp:TreeNode Text="选课" Value="选课">
-                        <asp:TreeNode Text="专业课" Value="专业课" NavigateUrl="~/ProfessionalCourse.aspx"></asp:TreeNode>
-                        <asp:TreeNode Text="通识课" Value="通识课" NavigateUrl="~/GeneralCourse.aspx"></asp:TreeNode>
-                    </asp:TreeNode>
-                </Nodes>
-            </asp:TreeView>
+                <asp:Label ID="Label1" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 30px; top: 4px; position: absolute; color: #FFFFFF; font-size: 18pt; font-family: 楷体; margin-top: 0px;"></asp:Label>
             <div class="auto-style5">
                 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-&nbsp;
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">退出登录</asp:LinkButton>
-            </div>
+                &nbsp;
+                </div>
             <br />
-            <asp:Panel ID="Panel1" runat="server">
+            <br />
+            <br />
+            <br />
+                <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="专业课选课" OnClick="Button3_Click" />
+                <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="已选课程" OnClick="Button5_Click" />
+            <br />
+                <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="通识课选课" OnClick="Button4_Click" />
+            <br />
+                <asp:Button ID="Button2" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button2_Click" />
                 <div class="auto-style2">
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style1">&nbsp;已选课程表</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style6">&nbsp;&nbsp; 已选课程表</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
-            </asp:Panel>
+            <br />
+            <br />
             <div class="auto-style2">
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校&nbsp;<asp:DropDownList ID="DropDownList3" runat="server">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                <span class="auto-style7">学校&nbsp;</span><asp:DropDownList ID="DropDownList3" runat="server" CssClass="auto-style7" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
                     <asp:ListItem>全部</asp:ListItem>
                     <asp:ListItem>武汉大学</asp:ListItem>
                     <asp:ListItem>华中科技大学</asp:ListItem>
                     <asp:ListItem>北京大学</asp:ListItem>
                     <asp:ListItem>清华大学</asp:ListItem>
                 </asp:DropDownList>
-                &nbsp; 学年 
-            <asp:DropDownList ID="DropDownList1" runat="server">
+                <span class="auto-style7">&nbsp; 学年 
+            </span> 
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style7">
                 <asp:ListItem>2019-2020</asp:ListItem>
                 <asp:ListItem>2018-2019</asp:ListItem>
                 <asp:ListItem>2017-2018</asp:ListItem>
                 <asp:ListItem>2016-2017</asp:ListItem>
             </asp:DropDownList>
-&nbsp; 学期 
-            <asp:DropDownList ID="DropDownList2" runat="server">
+                <span class="auto-style7">&nbsp; 学期 
+            </span> 
+            <asp:DropDownList ID="DropDownList2" runat="server" CssClass="auto-style7">
                 <asp:ListItem>3</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>1</asp:ListItem>
             </asp:DropDownList>
-&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="查询" BackColor="#99CCFF" OnClick="Button1_Click" />
+                <span class="auto-style7">&nbsp;&nbsp;
+            </span>
+            <asp:Button ID="Button1" runat="server" Text="查询" BackColor="#99CCFF" OnClick="Button1_Click" CssClass="auto-style7" />
+                <br />
             <br />
             <br />
             </div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="807px" CssClass="auto-style3">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1142px" CssClass="auto-style3" PageSize="15">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />

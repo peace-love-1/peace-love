@@ -16,6 +16,7 @@ namespace _20200709
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["account"] = "lyq";
             if (!IsPostBack)
             {
                 GridView1.DataSourceID = "SqlDataSource2";               
@@ -42,6 +43,7 @@ namespace _20200709
         //对已选课程进行撤课
         protected void Button1_Click2(object sender, EventArgs e)
         {
+            Session["account"] = "lyq";
             string account = Session["account"].ToString();
             int row = ((GridViewRow)((Button)sender).NamingContainer).RowIndex;
             string id = GridView1.Rows[row].Cells[0].Text;
@@ -59,7 +61,28 @@ namespace _20200709
             }
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("GeneralCourse.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ProfessionalCourse.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("UserCourse.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
         {
             Server.Transfer("Login.aspx");
         }

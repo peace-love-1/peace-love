@@ -23,13 +23,15 @@ namespace _20200709
                 GridView1.DataSourceID = "SqlDataSource1";
                 GridView2.DataSourceID = "SqlDataSource4";               
             }
-            Label1.Text = Session["account"].ToString();
+            //Label4.Text = Session["account"].ToString();
         }
 
         public void IsButtonEnabled()
         {
+            Session["account"] = "lyq";
             for (int i = 0; i < GridView1.Rows.Count; i++)
             {
+                
                 string account = Session["account"].ToString();
                 string id = GridView1.Rows[i].Cells[0].Text;
                 if (Data_access.QueryUc1(account, id))
@@ -42,7 +44,7 @@ namespace _20200709
 
         public void IsButtonEnabled2()
         {
-
+            Session["account"] = "lyq";
             for (int i = 0; i < GridView2.Rows.Count; i++)
             {
                 string account = Session["account"].ToString();
@@ -87,6 +89,7 @@ namespace _20200709
         //点击选课按钮，该课程加入选课申请表，同时按钮置为不可用
         protected void Button1_Click1(object sender, EventArgs e)
         {
+            Session["account"] = "lyq";
             string account = Session["account"].ToString();
             int row = ((GridViewRow)((Button)sender).NamingContainer).RowIndex;
             string id = GridView1.Rows[row].Cells[0].Text;
@@ -100,6 +103,7 @@ namespace _20200709
         //删除选课申请表中的申请，同时将该课程选课按钮置为可用
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+            Session["account"] = "lyq";
             string account = Session["account"].ToString();
             int row = ((GridViewRow)((LinkButton)sender).NamingContainer).RowIndex;
             string id = GridView2.Rows[row].Cells[0].Text;
@@ -139,6 +143,26 @@ namespace _20200709
         protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("GeneralCourse.aspx");
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ProfessionalCourse.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("UserCourse.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
         }
     }
 }
