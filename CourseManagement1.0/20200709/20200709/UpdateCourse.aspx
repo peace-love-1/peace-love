@@ -12,12 +12,14 @@
             margin-left: 0px;
             margin-top: 0px;
             margin-bottom: 2px;
-            width: 625px;
+            width: 513px;
             height: 679px;
             position: absolute;
-            top: 102px;
-            left: 655px;
+            top: 325px;
+            left: 422px;
             z-index: 1;
+            text-align: right;
+            font-size: 18pt;
         }
         .auto-style2 {
             text-align: center;
@@ -25,52 +27,53 @@
         center {
         }
         .auto-style3 {
-            text-align: left;
-        }
-        .auto-style5 {
-            margin-left: 50px;
-        }
-        .auto-style6 {
-            position: absolute;
-            top: 15px;
-            left: 1799px;
-            z-index: 1;
-            width: 59px;
+            text-align: right;
+            font-size: 20pt;
+            line-height:10pt;
         }
         .auto-style7 {
             position: absolute;
-            top: 50px;
-            left: 521px;
+            top: 292px;
+            left: 435px;
             z-index: 1;
-            width: 308px;
-            right: 1043px;
+            width: 416px;
+            right: 1115px;
+            font-size: 20pt;
         }
         .auto-style8 {
             position: absolute;
-            top: 50px;
-            left: 777px;
+            top: 292px;
+            left: 862px;
             z-index: 1;
-            width: 166px;
-            height: 21px;
-            right: 921px;
+            width: 277px;
+            height: 38px;
+            right: 819px;
             margin-bottom: 6px;
+            font-size: 20pt;
         }
         .auto-style9 {
             position: absolute;
-            top: 51px;
-            left: 973px;
+            top: 291px;
+            left: 1206px;
             z-index: 1;
-            height: 28px;
-            width: 70px;
+            height: 44px;
+            width: 110px;
+            font-size: 20pt;
         }
         </style>
 </head>
-<body>
+<body style="height: 100%;
+            width:100%;            
+            margin:0;      
+            padding:0;
+            overflow:hidden;
+            background-image: url('image1/445.png');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;">
     <form id="form1" runat="server">
         <div class="auto-style3">
-            <asp:Label ID="Label3" runat="server" Text="peace&amp;love Course Management Platform&nbsp;"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CssClass="auto-style6">返回</asp:LinkButton>
             &nbsp;<br />
         </div>
     <div class="auto-style2">
@@ -82,33 +85,33 @@
         <div class="auto-style2">
             <asp:Panel ID="Panel1" runat="server" CssClass="auto-style1">
                 <div class="auto-style3">
-                    <asp:Label ID="Label4" runat="server" Text="课头号："></asp:Label>
-                    &nbsp;
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:Label ID="Label5" runat="server" Text="类型："></asp:Label>
-                    &nbsp;&nbsp;
-                    <asp:Label ID="Label2" runat="server"></asp:Label>
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                    <br />
+                    <br />
+                    <br />
                     <br />
                     <br />
                     <asp:Label ID="Label6" runat="server" Text="课程名："></asp:Label>
                     &nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Label7" runat="server" Text="学分："></asp:Label>
                     &nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox3" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Label8" runat="server" Text="教师名："></asp:Label>
                     &nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Label9" runat="server" Text="授课学院："></asp:Label>
-                    &nbsp;<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    &nbsp;&nbsp;<asp:TextBox ID="TextBox5" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
                 </div>
@@ -116,32 +119,31 @@
                     <div class="auto-style3">
                         <asp:Label ID="Label10" runat="server" Text="专业："></asp:Label>
                         &nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox6" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                         <br />
                         <br />
                         <asp:Label ID="Label11" runat="server" Text="年级："></asp:Label>
                         &nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox7" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     </div>
                 </asp:Panel>
                 <div class="auto-style3">
                     <br />
                     <asp:Label ID="Label12" runat="server" Text="学年："></asp:Label>
                     &nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox8" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Label13" runat="server" Text="学期："></asp:Label>
                     &nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox9" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Label14" runat="server" Text="学校："></asp:Label>
                     &nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox10" runat="server" Height="35px" Width="255px" style="font-size: 18pt"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:Button ID="Button2" runat="server" Height="39px" OnClick="Button2_Click" Text="修改课程 " Width="140px" CssClass="auto-style5" />
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <br />
@@ -149,6 +151,15 @@
                 </div>
             </asp:Panel>
         </div>
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" style="z-index: 1; left: 1141px; top: 764px; position: absolute; height: 117px; width: 209px; font-size: 24pt" Text="修改课程" />
+        <asp:Label ID="Label16" runat="server" style="z-index: 1; left: 676px; top: 339px; position: absolute; font-size: 20pt"></asp:Label>
+        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 676px; top: 384px; position: absolute; font-size: 20pt"></asp:Label>
+        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 539px; top: 339px; position: absolute; font-size: 20pt; right: 1256px" Text="课头号："></asp:Label>
+        <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 566px; top: 384px; position: absolute; font-size: 20pt" Text="类型："></asp:Label>
+        <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button4_Click" />
+        <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="发布课程" OnClick="Button5_Click" />
+        <asp:Button ID="Button6" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="修改课程" OnClick="Button6_Click" />
+        <asp:Button ID="Button7" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="删除课程" OnClick="Button7_Click" />
     </form>
     </body>
 </html>

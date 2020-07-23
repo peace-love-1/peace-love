@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 //description:注册界面，用户名、密码设置正确则注册成功，跳转至登录页面
 //2020/07/14  添加了邮箱验证的功能
 //2020/07/15  调用接口函数简化代码
+//2020/07/28  增加了回车触发按钮事件
 
 namespace _20200709
 {
@@ -22,6 +23,7 @@ namespace _20200709
             TextBox2.Attributes["onblur"] = ClientScript.GetPostBackEventReference(TextBox2, null);
             TextBox3.Attributes["onblur"] = ClientScript.GetPostBackEventReference(TextBox3, null);
             TextBox5.Attributes["onblur"] = ClientScript.GetPostBackEventReference(TextBox5, null);
+            TextBox5.Attributes.Add("onkeydown", "return doButton()");
         }
 
         //用户名判断

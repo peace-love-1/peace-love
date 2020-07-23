@@ -10,6 +10,16 @@
         #form1 {            height: 674px;
         }
     </style>
+        <script type="text/javascript">
+        function doButton()
+        {
+            if (event.keyCode == 13)
+            {
+                document.getElementById("Button1").click();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body style="height: 100%;
             width:100%;            
@@ -33,7 +43,6 @@ border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None
            
             <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 36%; top: 90%; position: absolute; height: 10%; width: 30%; color: #FF0000;"></asp:Label>
             <br />
-            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" style="z-index: 1; left: 670px; top: 457px; position: absolute" Text="管理员" />
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
@@ -73,3 +82,5 @@ border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None
     aaa++;
     };
     </script>
+
+

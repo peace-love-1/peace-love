@@ -8,6 +8,7 @@ using System.Web.UI;
 //create date:20200710
 //update date:20200711
 //description:登录界面，成功则跳转至主页面，不成功则提示错误信息
+//2020/07/28  增加了回车触发按钮事件
 namespace _20200709
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -15,7 +16,7 @@ namespace _20200709
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            
+            TextBox3.Attributes.Add("onkeydown", "return doButton()");
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
@@ -61,7 +62,14 @@ namespace _20200709
                 int count = (int)cmd.ExecuteScalar();
                 if (count == 1)
                 {
-                    Response.Redirect("UserCourse.aspx");
+                    if (account == "peace&love")
+                    {
+                        Response.Redirect("Administrator.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("UserCourse.aspx");
+                    }
                 }
                 else
                 {
@@ -97,11 +105,6 @@ namespace _20200709
         protected void Button3_Click(object sender, EventArgs e)
         {
             Server.Transfer("Findpassword.aspx");
-        }
-
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("Administrator.aspx");
         }
 
         protected void TextBox1_TextChanged1(object sender, EventArgs e)

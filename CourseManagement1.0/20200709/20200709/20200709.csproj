@@ -87,6 +87,12 @@
     <Content Include="image1\334.jpg" />
     <Content Include="image1\334.png" />
     <Content Include="image1\335.jpg" />
+    <Content Include="image1\441.png" />
+    <Content Include="image1\442.png" />
+    <Content Include="image1\443.png" />
+    <Content Include="image1\444.png" />
+    <Content Include="image1\445.png" />
+    <Content Include="UpdateCourse.aspx" />
     <Content Include="UserCourse.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">

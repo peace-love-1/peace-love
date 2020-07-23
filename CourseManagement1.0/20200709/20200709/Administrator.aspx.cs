@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 //create date:20200717
 //update date:20200717
 //description:管理员界面，可以修改选课状态（同意、拒绝），可以对课程信息进行多条件的筛选查询
+//update date:2020/07/23  description：添加了到发布、删除、修改、和退出登录页面的跳转，进行了页面的美化
 
 namespace _20200709
 {
@@ -102,24 +103,26 @@ namespace _20200709
             IsButtonEnabled();
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
+        }
+
+        protected void Button3_Click1(object sender, EventArgs e)
         {
             Server.Transfer("AddCourse.aspx");
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button4_Click1(object sender, EventArgs e)
         {
             Server.Transfer("DeleteCourse.aspx");
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
+        protected void Button5_Click(object sender, EventArgs e)
         {
             Server.Transfer("UpdateCourse.aspx");
-        }
-
-        protected void LinkButton3_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("Login.aspx");
         }
     }
 }

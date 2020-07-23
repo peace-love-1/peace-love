@@ -10,6 +10,9 @@ namespace _20200709
     //author:彭子晨
     //create date:2020/07/21  description:管理员发布课程界面
 
+    //author:林玉琴
+    //update date:2020/07/23  description：添加了到发布、删除、修改、和退出登录页面的跳转，进行了页面的美化
+
     public partial class AddCourse : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -33,7 +36,14 @@ namespace _20200709
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Administrator.aspx");
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
         {
             string id = TextBox1.Text;
             string cname = TextBox2.Text;
@@ -69,9 +79,24 @@ namespace _20200709
             }
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void Button4_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Administrator.aspx");
+            Server.Transfer("UpdateCourse.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("DeleteCourse.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AddCourse.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
         }
     }
 }
