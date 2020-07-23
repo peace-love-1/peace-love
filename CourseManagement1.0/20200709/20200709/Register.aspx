@@ -18,6 +18,17 @@
             margin-top: 3px;
         }
     </style>
+    <script type="text/javascript">
+        function doButton()
+        {
+            if (event.keyCode == 13)
+            {
+                document.getElementById("Button3").click();
+                return false;
+            }
+        }
+    </script>
+
 </head>
 <body  style="height: 100%;
             width:100%;            

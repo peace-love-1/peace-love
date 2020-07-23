@@ -9,54 +9,62 @@
     <style type="text/css">
         .auto-style1 {
             margin-left: 0px;
+            font-size: 20pt;
         }
         .auto-style2 {
             text-align: center;
+            height: 681px;
         }
         .auto-style3 {
-            margin-left: 210px;
+            margin-left: 414px;
         }
         .auto-style4 {
-            position: absolute;
-            top: 15px;
-            left: 1739px;
-            z-index: 1;
-            width: 102px;
+            font-size: 20pt;
         }
-        .auto-style5 {
-            position: absolute;
-            top: 15px;
-            left: 10px;
-        }
-    </style>
+        </style>
 </head>
-<body>
+<body style="height: 100%;
+            width:100%;            
+            margin:0;      
+            padding:0;
+            overflow:hidden;
+            background-image: url('image1/441.png');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;"">>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" CssClass="auto-style5" style="z-index: 1" Text="peace&amp;love Course Management Platform"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" CssClass="auto-style4">退出登录</asp:LinkButton>
             <br />
-        </div>
-        <div>
-            <asp:Button ID="Button2" runat="server" Height="26px" Text="发布课程" Width="109px" OnClick="Button2_Click" />
-            <asp:Button ID="Button3" runat="server" Text="删除课程" Width="115px" OnClick="Button3_Click" />
-            <asp:Button ID="Button4" runat="server" Text="修改课程" Width="115px" OnClick="Button4_Click" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
         <div class="auto-style2">
             <br />
-            课头号：<asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="120px"></asp:TextBox>
-&nbsp;用户名：<asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="141px"></asp:TextBox>
-&nbsp;选课状态：<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="25px" Width="145px">
+            <asp:Button ID="Button2" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button2_Click1" />
+            <br />
+            <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="发布课程" OnClick="Button3_Click1" />
+            <br />
+            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="修改课程" OnClick="Button5_Click" />
+            <br />
+            <br />
+            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="删除课程" OnClick="Button4_Click1" />
+            <br />
+            <br />
+            <span class="auto-style4">课头号：</span><asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="120px" CssClass="auto-style4"></asp:TextBox>
+            <span class="auto-style4">&nbsp;用户名：</span><asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="141px" CssClass="auto-style4"></asp:TextBox>
+            <span class="auto-style4">&nbsp;选课状态：<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="38px" Width="178px">
                 <asp:ListItem>待审核</asp:ListItem>
                 <asp:ListItem>成功</asp:ListItem>
                 <asp:ListItem>失败</asp:ListItem>
             </asp:DropDownList>
-&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Height="28px" OnClick="Button1_Click" Text="查询" />
+&nbsp;&nbsp;</span><asp:Button ID="Button1" runat="server" Height="50px" OnClick="Button1_Click" Text="查询" CssClass="auto-style4" />
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="340px" OnDataBound="GridView1_DataBound" Width="904px" CssClass="auto-style3">
+            <br />
+&nbsp;<br />
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="481px" OnDataBound="GridView1_DataBound" Width="1066px" CssClass="auto-style3">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -85,6 +93,7 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
+            <br />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [account], [state] FROM [application2] WHERE (([state] = @state) AND ([id] = @id)) ORDER BY [account]">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="DropDownList1" Name="state" PropertyName="SelectedValue" Type="String" />

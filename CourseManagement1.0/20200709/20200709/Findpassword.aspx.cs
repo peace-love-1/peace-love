@@ -5,6 +5,7 @@
 //create date:2020/07/15
 //update date:2020/07/15
 //description:完成找回/修改密码的功能
+//2020/07/28  增加了回车触发按钮事件
 
 namespace _20200709
 {
@@ -15,6 +16,8 @@ namespace _20200709
             TextBox5.Attributes["onblur"] = ClientScript.GetPostBackEventReference(TextBox5, null);
             TextBox2.Attributes["onblur"] = ClientScript.GetPostBackEventReference(TextBox2, null);
             TextBox3.Attributes["onblur"] = ClientScript.GetPostBackEventReference(TextBox3, null);
+            TextBox5.Attributes.Add("onkeydown", "return doButton()");
+            TextBox3.Attributes.Add("onkeydown", "return doButton2()");
         }
 
         //成功设置新密码后返回登陆页面

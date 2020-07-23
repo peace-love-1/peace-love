@@ -10,81 +10,83 @@
         .auto-style1 {
             margin-left: 0px;
             margin-top: 0px;
-            width: 442px;
-            height: 597px;
+            width: 557px;
+            height: 514px;
             position: absolute;
-            top: 117px;
-            left: 674px;
+            top: 61px;
+            left: 487px;
             z-index: 1;
+            font-size: 16pt;
+            line-height:18pt;
         }
         .auto-style2 {
             text-align: center;
-        }
-        .auto-style3 {
-            text-align: left;
-            position: absolute;
-            width: 1852px;
-            height: 24px;
-            top: 15px;
-            left: 10px;
-            z-index: 1;
+            top:30%;
+            position:absolute;
         }
         .auto-style4 {
             text-align: left;
-        }
-        .auto-style5 {
-            position: absolute;
-            top: 0px;
-            left: 1778px;
-            z-index: 1;
-            width: 57px;
+            font-size: 20pt;
         }
         .auto-style6 {
             position: absolute;
-            top: 59px;
-            left: 570px;
+            top: 20px;
+            left: 463px;
             z-index: 1;
-            width: 292px;
-            right: 1010px;
+            width: 410px;
+            right: -373px;
+            font-size: 20pt;
         }
         .auto-style7 {
             position: absolute;
-            top: 57px;
-            left: 810px;
+            top: 13px;
+            left: 896px;
             z-index: 1;
-            height: 27px;
+            height: 41px;
+            width: 345px;
+            font-size: 20pt;
         }
         .auto-style8 {
             position: absolute;
-            top: 56px;
-            left: 1003px;
+            top: 14px;
+            left: 1286px;
             z-index: 1;
-            width: 94px;
-            height: 34px;
+            width: 121px;
+            height: 45px;
+            font-size: 20pt;
         }
-        .auto-style9 {
-            margin-left: 71px;
-        }
-    </style>
+        </style>
 </head>
-<body>
+<body style="height: 100%;
+            width:100%;            
+            margin:0;      
+            padding:0;
+            overflow:hidden;
+            background-image: url('image1/444.png');
+            background-size: 100% 100%;
+            background-repeat:no-repeat; 
+            background-attachment: fixed;">
+    <p>
+        <br />
+    </p>
+    <p>
+        &nbsp;</p>
     <form id="form1" runat="server">
-        <div class="auto-style3">
-            <asp:Label ID="Label12" runat="server" Text="peace&amp;love Course Management Platform"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CssClass="auto-style5">返回</asp:LinkButton>
-            <br />
-        </div>
+        <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button3_Click" />
+    <p>
+        &nbsp;</p>
         <div class="auto-style2">
+            <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             <br />
             <br />
             <asp:Label ID="Label13" runat="server" CssClass="auto-style6" Text="请输入删除课程的课头号："></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="159px" CssClass="auto-style7"></asp:TextBox>
+&nbsp;<asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style7"></asp:TextBox>
 &nbsp;
             <asp:Button ID="Button1" runat="server" Text="查询" OnClick="Button1_Click" CssClass="auto-style8" />
             <br />
             <div class="auto-style4">
+                <p style="line-height: 150%">
             <asp:Panel ID="Panel1" runat="server" CssClass="auto-style1">
                 <div class="auto-style4">
                     <br />
@@ -157,11 +159,19 @@
                     <asp:Label ID="Label11" runat="server"></asp:Label>
                     <br />
                     &nbsp;<br />
-                    <asp:Button ID="Button2" runat="server" CssClass="auto-style9" Height="43px" OnClick="Button2_Click" OnClientClick="return confirm('是否确定删除该课程吗？')" Text="删除课程" Width="132px" />
-                </div>
+                    </div>
             </asp:Panel>
+                <br />
+                <br />
+                <br />
             </div>
         </div>
+        <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="发布课程" OnClick="Button4_Click" />
+        <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="删除课程" OnClick="Button5_Click" />
+        <asp:Button ID="Button6" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="修改课程" OnClick="Button6_Click" />
+        <p>
+            &nbsp;</p>
+        <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" style="z-index: 1; left: 1141px; top: 764px; position: absolute; height: 117px; width: 209px; font-size: 24pt" Text="删除课程" />
     </form>
 </body>
 </html>
