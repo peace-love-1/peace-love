@@ -84,6 +84,7 @@
     <Content Include="GeneralCourse.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Findpassword.aspx" />
+    <Content Include="MainForm.aspx" />
     <Content Include="UserCourse.aspx" />
     <Content Include="VerificationCode.aspx" />
     <Content Include="Web.config">
