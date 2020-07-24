@@ -52,7 +52,8 @@ namespace _20200709
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update users set password='" + a + "' where @email='" + b + "'", conn);
+                SqlCommand cmd = new SqlCommand("update users set password=@password where email=@email", conn);
+                cmd.Parameters.AddWithValue("password", a);
                 cmd.Parameters.AddWithValue("@email", b);
                 cmd.ExecuteNonQuery();
                 return "1";
@@ -75,8 +76,7 @@ namespace _20200709
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update uc set state='" + a + "' where @courseid='" + b + "'", conn);
-                cmd.Parameters.AddWithValue("@courseid", b);
+                SqlCommand cmd = new SqlCommand("update uc set state='" + a + "' where courseid='" + b + "'", conn);
                 cmd.ExecuteNonQuery();
                 return "1";
             }

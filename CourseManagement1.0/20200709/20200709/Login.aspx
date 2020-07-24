@@ -9,6 +9,15 @@
     <style type="text/css">
         #form1 {            height: 674px;
         }
+        .auto-style1 {
+            width: 218px;
+            height: 292px;
+            position: absolute;
+            top: -77px;
+            left: -936px;
+            z-index: 1;
+            margin-top: 0px;
+        }
     </style>
         <script type="text/javascript">
         function doButton()
@@ -60,7 +69,7 @@ border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None
 
             <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 67%; top: 68%; position: absolute; color: #FF0000;"></asp:Label>
             <asp:Label ID="Label1" runat="server" BorderStyle="None" style="z-index: 1; left: 18%; top: 42.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="用户名"></asp:Label>
-        </asp:Panel>
+            &nbsp;</asp:Panel>
         <br />
         <br />
         <br />

@@ -11,14 +11,13 @@
             height: 88px;
             width: 582px;
         }
-        .auto-style5 {
-            font-size: x-large;
-        }
         .auto-style6 {
             margin-left: 326px;
+            font-size: 20pt;
         }
         .auto-style7 {
-            margin-left: 74px;
+            margin-left: 78px;
+            font-size: 14pt;
         }
         .auto-style8 {
             height: 957px;
@@ -26,13 +25,11 @@
             width: 1489px;
         }
         .auto-style10 {
-            width: 721px;
-            height: 687px;
+            width: 52%;
+            height: 54%;
             position: absolute;
-            left: 1107px;
-            top: 144px;
-            margin-left: 0px;
-            margin-right: 0px;
+            left: 68%;
+            top: 30%;
         }
         .auto-style11 {
             text-align: justify;
@@ -41,14 +38,12 @@
             text-align: justify;
             width: 1039px;
             margin-left: 162px;
+            left:3%;
         }
         .auto-style13 {
             text-align: justify;
             margin-left: 108px;
-        }
-        .auto-style14 {
-            text-align: justify;
-            margin-left: 310px;
+            left:1%;
         }
         .auto-style15 {
             font-size: x-large;
@@ -58,54 +53,56 @@
             font-family: Arial;
             font-size: large;
         }
-        .auto-style17 {
-            font-family: Arial;
-            font-size: medium;
-        }
-        .auto-style18 {
-            font-size: medium;
-        }
         .auto-style20 {
             width: 458px;
             height: 128px;
             position: absolute;
-            left: 1412px;
-            top: 0;
+            left: 1438px;
+            top: 77px;
             margin-bottom: 3px;
+        }
+        .auto-style21 {
+            font-size: 20pt;
+            left:2%;
         }
         </style>
 </head>
-<body style="background-image: url('image1/3.jpg');
+<body style="height: 100%;
+            width:100%;            
+            margin:0;      
+            padding:0;
+            overflow:hidden ;
+            background-image: url('image1/334.png');            
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;"">
     <form id="form1" runat="server">
         <div class="auto-style8">
-            <asp:TreeView ID="TreeView1" runat="server" Height="101px" Width="126px">
-                <Nodes>
-                    <asp:TreeNode Text="选课" Value="选课">
-                        <asp:TreeNode NavigateUrl="~/GeneralCourse.aspx" Text="通识课课" Value="通识课课"></asp:TreeNode>
-                    </asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/UserCourse.aspx" Text="已选课程" Value="已选课程"></asp:TreeNode>
-                </Nodes>
-            </asp:TreeView>
-            <div class="auto-style20">
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-&nbsp;
-                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">退出登录</asp:LinkButton>
-            </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 30px; top: 4px; position: absolute; color: #FFFFFF; font-size: 18pt; font-family: 楷体; margin-top: 0px;"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
             <br />
-            <asp:Panel ID="Panel1" runat="server">
-                <div class="auto-style14">
-                    &nbsp;<span class="auto-style5"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 选课-专业课<br /> </strong></span><br />
-                </div>
-            </asp:Panel>
+            <br />
+            <br />
+            <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="专业课选课" OnClick="Button4_Click" />
+            <asp:Button ID="Button6" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="已选课程" OnClick="Button6_Click" />
+            <br />
+            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="通识课选课" OnClick="Button5_Click" />
+            <br />
+            <br />
+            <br />
+            &nbsp;<br />
+                <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 1338px; top: 839px; position: absolute; color: #FF0000; width: 497px" Text="提示:&nbsp;选课成功的部分已存在于您的课表中，请确认！"></asp:Label>
+                <br />
+                <br />
+                <asp:Label ID="Label2" runat="server" style="z-index: 1; left:28%; top: 21%; position: absolute; font-size:28pt" Text="选课-专业课"></asp:Label>
+                <br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
             <asp:Panel ID="Panel2" runat="server">
                 <div class="auto-style11">
-                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" CssClass="auto-style6" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" Width="356px">
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" CssClass="auto-style6" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" Width="832px">
                         <asp:ListItem>按学院查询</asp:ListItem>
                         <asp:ListItem>按课程名查询</asp:ListItem>
                     </asp:RadioButtonList>
@@ -114,59 +111,59 @@
             </asp:Panel>
             <asp:Panel ID="Panel3" runat="server" Visible="False">
                 <div class="auto-style13">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学校&nbsp;<asp:DropDownList ID="DropDownList5" runat="server">
+                    <span class="auto-style21"> 学校&nbsp;</span><asp:DropDownList ID="DropDownList5" runat="server" CssClass="auto-style21" Height="43px" Width="205px">
                         <asp:ListItem>武汉大学</asp:ListItem>
                         <asp:ListItem>华中科技大学</asp:ListItem>
                         <asp:ListItem>北京大学</asp:ListItem>
                         <asp:ListItem>清华大学</asp:ListItem>
                     </asp:DropDownList>
-                    &nbsp; 院系 
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <span class="auto-style21">&nbsp;院系 </span>
+                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style21" Height="45px">
                         <asp:ListItem>计算机学院</asp:ListItem>
                         <asp:ListItem>测绘学院</asp:ListItem>
                         <asp:ListItem>文学院</asp:ListItem>
                         <asp:ListItem>法学院</asp:ListItem>
                     </asp:DropDownList>
-                    &nbsp; 专业 
-                    <asp:DropDownList ID="DropDownList2" runat="server">
+                    <span class="auto-style21">&nbsp;专业 </span>
+                    <asp:DropDownList ID="DropDownList2" runat="server" CssClass="auto-style21">
                         <asp:ListItem>计算机科学与技术</asp:ListItem>
                         <asp:ListItem>软件工程</asp:ListItem>
                         <asp:ListItem>计算机类</asp:ListItem>
                     </asp:DropDownList>
-                    &nbsp; 年级 
-                    <asp:DropDownList ID="DropDownList3" runat="server">
+                    <span class="auto-style21">&nbsp;年级 </span>
+                    <asp:DropDownList ID="DropDownList3" runat="server" CssClass="auto-style21">
                         <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2018</asp:ListItem>
                         <asp:ListItem>2017</asp:ListItem>
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>
-                    &nbsp;
-                    <asp:Button ID="Button2" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button2_Click" />
+                    <span class="auto-style21">&nbsp; </span>
+                    <asp:Button ID="Button2" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button2_Click" CssClass="auto-style21" />
                 </div>
             </asp:Panel>
             <asp:Panel ID="Panel4" runat="server" Visible="False">
                 <div class="auto-style12">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学校&nbsp;<asp:DropDownList ID="DropDownList6" runat="server">
+                    <span class="auto-style21">学校&nbsp;</span><asp:DropDownList ID="DropDownList6" runat="server" CssClass="auto-style21">
                         <asp:ListItem>武汉大学</asp:ListItem>
                         <asp:ListItem>华中科技大学</asp:ListItem>
                         <asp:ListItem>北京大学</asp:ListItem>
                         <asp:ListItem>清华大学</asp:ListItem>
                     </asp:DropDownList>
-                    &nbsp; 年级 
-                    <asp:DropDownList ID="DropDownList4" runat="server">
+                    <span class="auto-style21">&nbsp; 年级 </span>
+                    <asp:DropDownList ID="DropDownList4" runat="server" CssClass="auto-style21">
                         <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2018</asp:ListItem>
                         <asp:ListItem>2017</asp:ListItem>
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>
-                    &nbsp; 课程名 
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                    &nbsp;&nbsp;
-                    <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button1_Click1" />
+                    <span class="auto-style21">&nbsp; 课程名 </span> 
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style21"></asp:TextBox>
+                    <span class="auto-style21">&nbsp;&nbsp; </span>
+                    <asp:Button ID="Button1" runat="server" BackColor="#99CCFF" Text="查询" OnClick="Button1_Click1" CssClass="auto-style21" />
                 </div>
             </asp:Panel>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="941px" OnDataBound="GridView1_DataBound">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1083px" OnDataBound="GridView1_DataBound">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -194,32 +191,11 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([academy] = @academy) AND ([major] = @major) AND ([grade] = @grade) AND ([school] = @school))">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="DropDownList1" Name="academy" PropertyName="SelectedValue" Type="String" />
-                    <asp:ControlParameter ControlID="DropDownList2" Name="major" PropertyName="SelectedValue" Type="String" />
-                    <asp:ControlParameter ControlID="DropDownList3" Name="grade" PropertyName="SelectedValue" Type="String" />
-                    <asp:ControlParameter ControlID="DropDownList5" Name="school" PropertyName="SelectedValue" Type="String" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([grade] = @grade) AND ([cname] = @cname) AND ([school] = @school))">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="DropDownList4" Name="grade" PropertyName="SelectedValue" Type="String" />
-                    <asp:ControlParameter ControlID="TextBox1" Name="cname" PropertyName="Text" Type="String" />
-                    <asp:ControlParameter ControlID="DropDownList6" Name="school" PropertyName="SelectedValue" Type="String" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([grade] = @grade) AND ([school] = @school))">
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="DropDownList4" Name="grade" PropertyName="SelectedValue" Type="String" />
-                    <asp:ControlParameter ControlID="DropDownList6" Name="school" PropertyName="SelectedValue" Type="String" />
-                </SelectParameters>
-            </asp:SqlDataSource>
             <div class="auto-style10">
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">选课申请单（专业课）<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">&nbsp;&nbsp;&nbsp;&nbsp; 选课申请单（专业课）<br />
                 </span><br />
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="16px" Width="347px" OnDataBound="GridView2_DataBound">
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="107px" Width="481px" OnDataBound="GridView2_DataBound">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
@@ -242,7 +218,7 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [state] FROM [application] WHERE (([account] = @account) AND ([type] = @type))">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [state] FROM [application2] WHERE (([account] = @account) AND ([type] = @type))">
                     <SelectParameters>
                         <asp:SessionParameter Name="account" SessionField="account" Type="String" />
                         <asp:Parameter DefaultValue="专业课" Name="type" Type="String" />
@@ -251,13 +227,31 @@
                 &nbsp; <font class="auto-style16" color="#ff0000" name="promptTitle" style="margin: 0px; padding: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
                 <br />
                 <br />
-                <span class="auto-style18">提示:</span></font><span class="auto-style17" style="color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; background-color: rgb(255, 255, 255)">&nbsp;</span><span class="auto-style17" name="promptTaxt" style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">选课成功的部分已存在于您的课表中，请确认！</span><br />
+                </font><br />
                 <br />
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([grade] = @grade) AND ([school] = @school) AND ([cname] LIKE '%' + @cname + '%'))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList4" Name="grade" PropertyName="SelectedValue" Type="Int32" />
+                    <asp:ControlParameter ControlID="DropDownList6" Name="school" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="TextBox1" Name="cname" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([academy] = @academy) AND ([major] = @major) AND ([grade] = @grade) AND ([school] = @school))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" Name="academy" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList2" Name="major" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList3" Name="grade" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList5" Name="school" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [credit], [tname], [academy], [major], [grade] FROM [pcourses] WHERE (([grade] = @grade) AND ([school] = @school))">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList4" Name="grade" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList6" Name="school" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             </div>
-            <br />
         </div>
-        <p>
-            &nbsp;</p>
     </form>
 </body>
 </html>
