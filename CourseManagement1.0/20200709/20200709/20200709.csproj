@@ -73,6 +73,7 @@
     <Content Include="AddCourse.aspx" />
     <Content Include="Administrator.aspx" />
     <Content Include="DeleteCourse.aspx" />
+    <Content Include="image1\1.gif" />
     <Content Include="image1\1.jpg" />
     <Content Include="image1\10.jpg" />
     <Content Include="image1\11.jpg" />
@@ -87,11 +88,26 @@
     <Content Include="image1\334.jpg" />
     <Content Include="image1\334.png" />
     <Content Include="image1\335.jpg" />
+    <Content Include="image1\4.jpg" />
     <Content Include="image1\441.png" />
     <Content Include="image1\442.png" />
     <Content Include="image1\443.png" />
     <Content Include="image1\444.png" />
     <Content Include="image1\445.png" />
+    <Content Include="image1\5.jpg" />
+    <Content Include="image1\6.jpg" />
+    <Content Include="image1\7.jpg" />
+    <Content Include="image1\8.jpg" />
+    <Content Include="image1\9.jpg" />
+    <Content Include="image1\login.jpg" />
+    <Content Include="image1\mainform.jpg" />
+    <Content Include="image1\mainform2.jpg" />
+    <Content Include="image1\mainform3.jpg" />
+    <Content Include="image1\password.jpg" />
+    <Content Include="image1\password2.jpg" />
+    <Content Include="image1\register.jpg" />
+    <Content Include="image1\register2.jpg" />
+    <Content Include="MainForm.aspx" />
     <Content Include="UpdateCourse.aspx" />
     <Content Include="UserCourse.aspx" />
     <Content Include="VerificationCode.aspx" />
@@ -204,10 +220,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>

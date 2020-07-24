@@ -9,47 +9,73 @@
     <style type="text/css">
         #form1 {            height: 674px;
         }
+        .auto-style1 {
+            width: 218px;
+            height: 292px;
+            position: absolute;
+            top: -77px;
+            left: -936px;
+            z-index: 1;
+            margin-top: 0px;
+        }
     </style>
+        <script type="text/javascript">
+        function doButton()
+        {
+            if (event.keyCode == 13)
+            {
+                document.getElementById("Button1").click();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body style="height: 100%;
             width:100%;            
             margin:0; 
             padding:0;
-            background-image:url('image1/1.jpg');
+            background-image:url('image1/login.jpg');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
-            background-attachment: fixed;" >
+            background-attachment: fixed;">
     <form id="form1" runat="server">
-        <asp:Panel ID="Panel1" runat="server" style="z-index: 1; left: 303px; top: 89px; position: absolute; height: 590px; width: 887px; background-image:url('image1/2.jpg');" >
-            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 262px; top: 275px; position: absolute; font-weight: 700;" Text="用户名" BorderStyle="None"></asp:Label>
+        <asp:Panel ID="Panel1" runat="server" style="z-index: 1; left: 50%; top: 10%; position: absolute; height: 70%; width:55%;" >
             <br />
             <br />
             <br />
-            <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 263px; top: 407px; position: absolute; font-weight: 700;" Text="验证码"></asp:Label>
+            <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 18%; top: 66.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="验证码"></asp:Label>
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 343px; top: 262px; position: absolute; height: 32px; width: 269px" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 368px; top: 529px; position: absolute; height: 20px; width: 182px; color: #FF0000;"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 30%; top: 40%; position: absolute; height: 10%; width: 35%; margin:0; padding:0;
+background-image:url('image1/5.jpg');background-size: 100% 100%; background-repeat:no-repeat;text-indent:1em; font-size: 24pt; font-family: 宋体; font-weight: 700;
+border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None" ToolTip="请输入用户名" OnTextChanged="TextBox1_TextChanged1"></asp:TextBox>
+           
+            <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 36%; top: 90%; position: absolute; height: 10%; width: 30%; color: #FF0000;"></asp:Label>
             <br />
-            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" style="z-index: 1; left: 670px; top: 457px; position: absolute" Text="管理员" />
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged" style="z-index: 1; left: 345px; top: 330px; position: absolute; height: 32px; width: 268px"></asp:TextBox>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 346px; top: 454px; position: absolute; height: 42px; width: 96px" Text="登录" />
-            <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 282px; top: 342px; position: absolute; font-weight: 700;" Text="密码"></asp:Label>
-            <asp:Button ID="Button2" runat="server" BackColor="White" BorderColor="White" BorderStyle="None" OnClick="Button2_Click" style="z-index: 1; left: 482px; top: 468px; position: absolute; text-decoration: underline" Text="注册" />
-            <asp:Button ID="Button3" runat="server" BackColor="White" BorderColor="White" BorderStyle="None" style="z-index: 1; left: 548px; top: 468px; position: absolute; text-decoration: underline" Text="忘记密码" OnClick="Button3_Click" />
-            <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 345px; top: 395px; position: absolute; height: 33px; width: 104px"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"  style="z-index: 1;left: 30%; top: 52%; position: absolute; height: 10%; width: 35%;text-indent:1em; background-image:url('image1/5.jpg');background-size: 100% 100%; background-repeat:no-repeat; font-size: x-large; font-family: 宋体; font-weight: 700;" BackColor="#53C5CA" BorderColor="#51C4C9" BorderStyle="None" ToolTip="请输入密码" TextMode="Password"></asp:TextBox>
+           
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 30%; top: 78%; position: absolute; height: 42px; width: 96px; font-size: 24pt; font-weight: 700; font-family: 楷体;" Text="登录" BackColor="#55C5CA" BorderColor="#5DC7CB" BorderStyle="None" />
+            <asp:Label ID="Label2" runat="server" style="z-index: 1;left:20.5%; top: 54.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体; width: 95px;" Text="密码"></asp:Label>
+            <asp:Button ID="Button2" runat="server" BackColor="#50C4C9" BorderColor="#56C6CB" BorderStyle="None" OnClick="Button2_Click" style="z-index: 1; left: 45%; top: 80%; position: absolute; text-decoration: underline; font-size: 14pt; font-family: 楷体;" Text="注册" />
+            <asp:Button ID="Button3" runat="server" BackColor="#5EC8CD" BorderColor="#64CACE" BorderStyle="None" style="z-index: 1; left: 55%; top: 80%; position: absolute; text-decoration: underline; font-size: 14pt; font-family: 楷体;" Text="忘记密码" OnClick="Button3_Click" />
+           
+            <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 30%; top: 64%; position: absolute; height: 10%; width: 17%;text-indent:1em;background-image:url('image1/5.jpg');background-size: 100% 100%; background-repeat:no-repeat; font-size: x-large; font-weight: 700;" BackColor="#5CC7CC" BorderColor="#50C4C9" BorderStyle="None" ToolTip="请输入验证码"></asp:TextBox>
 
-            <asp:Image ID="Image1" runat="server" style="z-index: 1; left: 481px; top: 392px; position: absolute; height: 35px; width: 128px" ImageUrl="VerificationCode.aspx"  /><br />
+            <asp:Image ID="Image1" runat="server" style="z-index: 1; left: 50%; top: 65%; position: absolute; height: 9%; width: 14%" ImageUrl="VerificationCode.aspx"  /><br />
 
-            <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 651px; top: 404px; position: absolute"></asp:Label>
-        </asp:Panel>
+            <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 67%; top: 68%; position: absolute; color: #FF0000;"></asp:Label>
+            <asp:Label ID="Label1" runat="server" BorderStyle="None" style="z-index: 1; left: 18%; top: 42.5%; position: absolute; font-weight: 400; font-size: 24pt; font-family: 楷体;" Text="用户名"></asp:Label>
+            &nbsp;</asp:Panel>
         <br />
         <br />
         <br />
+            <asp:Button ID="Button5" runat="server" style="z-index: 1; left: 10%; top: 4%; position: absolute; color: #FFFFFF; font-size: x-large;" Text="ABOUT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" />
+            <asp:Button ID="Button6" runat="server" style="z-index: 1; left: 19%; top: 4%; position: absolute; color: #FFFFFF; font-size: x-large;" Text="CONTACT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" />
+            <asp:Button ID="Button7" runat="server" style="z-index: 1; left: 30%; top: 4%; position: absolute; color: #FFFFFF; font-size: x-large;" Text="QUESTION" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" />
         <br />
         <br />
         <br />
@@ -65,3 +91,5 @@
     aaa++;
     };
     </script>
+
+

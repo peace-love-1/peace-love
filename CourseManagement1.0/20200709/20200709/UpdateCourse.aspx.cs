@@ -69,7 +69,7 @@ namespace _20200709
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            string id = Label6.Text;
+            string id = Label16.Text;
             string type = Label17.Text;
             string cname = TextBox2.Text;
             double credit = Convert.ToDouble(TextBox3.Text);

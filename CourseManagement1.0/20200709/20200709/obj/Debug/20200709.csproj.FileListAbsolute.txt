@@ -452,7 +452,6 @@ E:\教材\daima\peace-love\CourseManagement1.0\20200709\20200709\bin\de\DevExpre
 E:\教材\daima\peace-love\CourseManagement1.0\20200709\20200709\bin\es\DevExpress.Office.v20.1.Core.resources.dll
 E:\教材\daima\peace-love\CourseManagement1.0\20200709\20200709\bin\ja\DevExpress.Office.v20.1.Core.resources.dll
 E:\教材\daima\peace-love\CourseManagement1.0\20200709\20200709\bin\ru\DevExpress.Office.v20.1.Core.resources.dll
-C:\Users\24274\source\repos\peace-love\CourseManagement1.0\20200709\20200709\obj\Debug\20200709.csprojAssemblyReference.cache
 C:\Users\24274\source\repos\peace-love\CourseManagement2.0\20200709\20200709\bin\20200709.dll.config
 C:\Users\24274\source\repos\peace-love\CourseManagement2.0\20200709\20200709\bin\20200709.dll
 C:\Users\24274\source\repos\peace-love\CourseManagement2.0\20200709\20200709\bin\20200709.pdb
