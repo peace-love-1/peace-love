@@ -52,8 +52,9 @@ namespace _20200709
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("update users set password='" + a + "' where @email='" + b + "'", conn);
+                SqlCommand cmd = new SqlCommand("update users set @password='" + a + "' where @email='" + b + "'", conn);
                 cmd.Parameters.AddWithValue("@email", b);
+                cmd.Parameters.AddWithValue("@password", a);
                 cmd.ExecuteNonQuery();
                 return "1";
             }
