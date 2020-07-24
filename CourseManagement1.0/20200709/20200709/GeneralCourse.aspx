@@ -65,7 +65,7 @@
             background-attachment: fixed;">
     <form id="form1" runat="server">
         <div class="auto-style4">
-            <asp:Button ID="Button2" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button2_Click" />
+            <asp:Button ID="Button2" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button2_Click" />
             <br />
             <div class="auto-style20">
                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -76,8 +76,8 @@
             <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="已选课程" OnClick="Button3_Click" />
             <asp:Label ID="Label4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 30px; top: 4px; position: absolute; color: #FFFFFF; font-size: 18pt; font-family: 楷体; margin-top: 0px;"></asp:Label>
             <br />
-            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="专业课选课" OnClick="Button4_Click" />
-            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="通识课选课" OnClick="Button5_Click" />
+            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 411px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="专业课选课" OnClick="Button4_Click" />
+            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="通识课选课" OnClick="Button5_Click" />
             <br />
             <br />
             <br />

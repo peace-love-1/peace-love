@@ -112,5 +112,10 @@ namespace _20200709
         {
             Server.Transfer("Login.aspx");
         }
+
+        protected void Button8_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Administrator.aspx");
+        }
     }
 }

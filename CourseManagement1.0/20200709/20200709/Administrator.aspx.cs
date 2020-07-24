@@ -124,5 +124,10 @@ namespace _20200709
         {
             Server.Transfer("UpdateCourse.aspx");
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Administrator.aspx");
+        }
     }
 }
