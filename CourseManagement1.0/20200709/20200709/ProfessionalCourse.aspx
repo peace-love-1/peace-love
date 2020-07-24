@@ -110,9 +110,9 @@
                 <div class="auto-style13">
                     <span class="auto-style21"> 学校&nbsp;</span><asp:DropDownList ID="DropDownList5" runat="server" CssClass="auto-style21" Height="43px" Width="205px">
                         <asp:ListItem>武汉大学</asp:ListItem>
-                        <asp:ListItem>华中科技大学</asp:ListItem>
-                        <asp:ListItem>北京大学</asp:ListItem>
-                        <asp:ListItem>清华大学</asp:ListItem>
+                        <asp:ListItem>哈尔滨工业大学</asp:ListItem>
+                        <asp:ListItem>上海交通大学</asp:ListItem>
+                        <asp:ListItem>中国海洋大学</asp:ListItem>
                     </asp:DropDownList>
                     <span class="auto-style21">&nbsp;院系 </span>
                     <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style21" Height="45px">
@@ -129,8 +129,8 @@
                     </asp:DropDownList>
                     <span class="auto-style21">&nbsp;年级 </span>
                     <asp:DropDownList ID="DropDownList3" runat="server" CssClass="auto-style21">
-                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2018</asp:ListItem>
+                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2017</asp:ListItem>
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>
@@ -140,16 +140,16 @@
             </asp:Panel>
             <asp:Panel ID="Panel4" runat="server" Visible="False">
                 <div class="auto-style12">
-                    <span class="auto-style21">学校&nbsp;</span><asp:DropDownList ID="DropDownList6" runat="server" CssClass="auto-style21">
+                    <span class="auto-style21">学校&nbsp;</span><asp:DropDownList ID="DropDownList6" runat="server" CssClass="auto-style21" Width="227px">
                         <asp:ListItem>武汉大学</asp:ListItem>
-                        <asp:ListItem>华中科技大学</asp:ListItem>
-                        <asp:ListItem>北京大学</asp:ListItem>
-                        <asp:ListItem>清华大学</asp:ListItem>
+                        <asp:ListItem>哈尔滨工业大学</asp:ListItem>
+                        <asp:ListItem>上海交通大学</asp:ListItem>
+                        <asp:ListItem>中国海洋大学</asp:ListItem>
                     </asp:DropDownList>
                     <span class="auto-style21">&nbsp; 年级 </span>
                     <asp:DropDownList ID="DropDownList4" runat="server" CssClass="auto-style21">
-                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2018</asp:ListItem>
+                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2017</asp:ListItem>
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>

@@ -41,7 +41,7 @@ namespace _20200709
                 if (type == "专业课")
                 {
                     Label6.Text = reader.GetString(5);
-                    Label7.Text = reader.GetString(6);
+                    Label7.Text = reader.GetInt32(6).ToString();
                 }
                 Label8.Text = reader.GetString(7);
                 Label9.Text = reader.GetInt32(8).ToString();

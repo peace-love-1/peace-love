@@ -23,9 +23,13 @@ namespace _20200709
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            try
+            string id = TextBox1.Text;
+            if (!Data_access.QueryCourses(id))
             {
-                string id = TextBox1.Text;
+                Response.Write("<script>alert('该课程不存在')</script>");
+            }
+            else
+            {
                 SqlDataReader reader = Data_access.QueryCourseId(id);
                 while (reader.Read())
                 {
@@ -43,7 +47,7 @@ namespace _20200709
                     if (type == "专业课")
                     {
                         TextBox6.Text = reader.GetString(5);
-                        TextBox7.Text = reader.GetString(6);
+                        TextBox7.Text = reader.GetInt32(6).ToString();
                     }
                     TextBox8.Text = reader.GetString(7);
                     TextBox9.Text = reader.GetInt32(8).ToString();
@@ -51,10 +55,7 @@ namespace _20200709
                 }
                 reader.Close();
             }
-            catch
-            {
-                Response.Write("<script>alert('该课程不存在')</script>");
-            }
+          
         }
 
         protected void Button2_Click(object sender, EventArgs e)

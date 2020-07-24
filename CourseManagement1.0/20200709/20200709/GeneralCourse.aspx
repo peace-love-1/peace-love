@@ -109,9 +109,9 @@
                 <span class="auto-style22">学校</span>&nbsp; 
                 <asp:DropDownList ID="DropDownList1" runat="server" style="font-size: 20pt">
                     <asp:ListItem>武汉大学</asp:ListItem>
-                    <asp:ListItem>华中科技大学</asp:ListItem>
-                    <asp:ListItem>北京大学</asp:ListItem>
-                    <asp:ListItem>清华大学</asp:ListItem>
+                    <asp:ListItem>哈尔滨工业大学</asp:ListItem>
+                    <asp:ListItem>上海交通大学</asp:ListItem>
+                    <asp:ListItem>中国海洋大学</asp:ListItem>
                 </asp:DropDownList>
                 &nbsp; 课程名/教师名&nbsp; 
                 <asp:TextBox ID="TextBox1" runat="server" style="font-size: 20pt"></asp:TextBox>

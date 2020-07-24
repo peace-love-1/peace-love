@@ -23,7 +23,7 @@ namespace _20200709
                 Panel3.Visible = true;
                 Panel4.Visible = false;
                 GridView1.DataSourceID = "SqlDataSource2";
-                GridView2.DataSourceID = "SqlDataSource1";               
+                GridView2.DataSourceID = "SqlDataSource1";
             }
             Label1.Text = Session["account"].ToString();
         }

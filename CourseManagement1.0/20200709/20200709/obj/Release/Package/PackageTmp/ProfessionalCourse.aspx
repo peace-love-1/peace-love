@@ -53,17 +53,13 @@
             font-family: Arial;
             font-size: large;
         }
-        .auto-style20 {
-            width: 458px;
-            height: 128px;
-            position: absolute;
-            left: 1438px;
-            top: 77px;
-            margin-bottom: 3px;
-        }
         .auto-style21 {
             font-size: 20pt;
             left:2%;
+        }
+        .auto-style22 {
+            font-size: 24pt;
+            font-weight: bold;
         }
         </style>
 </head>
@@ -83,11 +79,11 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button3_Click" />
-            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="专业课选课" OnClick="Button4_Click" />
+            <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button3_Click" />
+            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 411px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="专业课选课" OnClick="Button4_Click" />
             <asp:Button ID="Button6" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="已选课程" OnClick="Button6_Click" />
             <br />
-            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="通识课选课" OnClick="Button5_Click" />
+            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="通识课选课" OnClick="Button5_Click" />
             <br />
             <br />
             <br />
@@ -102,6 +98,7 @@
             <br />
             <asp:Panel ID="Panel2" runat="server">
                 <div class="auto-style11">
+                    <br />
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" CssClass="auto-style6" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal" Width="832px">
                         <asp:ListItem>按学院查询</asp:ListItem>
                         <asp:ListItem>按课程名查询</asp:ListItem>
@@ -113,9 +110,9 @@
                 <div class="auto-style13">
                     <span class="auto-style21"> 学校&nbsp;</span><asp:DropDownList ID="DropDownList5" runat="server" CssClass="auto-style21" Height="43px" Width="205px">
                         <asp:ListItem>武汉大学</asp:ListItem>
-                        <asp:ListItem>华中科技大学</asp:ListItem>
-                        <asp:ListItem>北京大学</asp:ListItem>
-                        <asp:ListItem>清华大学</asp:ListItem>
+                        <asp:ListItem>哈尔滨工业大学</asp:ListItem>
+                        <asp:ListItem>上海交通大学</asp:ListItem>
+                        <asp:ListItem>中国海洋大学</asp:ListItem>
                     </asp:DropDownList>
                     <span class="auto-style21">&nbsp;院系 </span>
                     <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style21" Height="45px">
@@ -132,8 +129,8 @@
                     </asp:DropDownList>
                     <span class="auto-style21">&nbsp;年级 </span>
                     <asp:DropDownList ID="DropDownList3" runat="server" CssClass="auto-style21">
-                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2018</asp:ListItem>
+                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2017</asp:ListItem>
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>
@@ -143,16 +140,16 @@
             </asp:Panel>
             <asp:Panel ID="Panel4" runat="server" Visible="False">
                 <div class="auto-style12">
-                    <span class="auto-style21">学校&nbsp;</span><asp:DropDownList ID="DropDownList6" runat="server" CssClass="auto-style21">
+                    <span class="auto-style21">学校&nbsp;</span><asp:DropDownList ID="DropDownList6" runat="server" CssClass="auto-style21" Width="227px">
                         <asp:ListItem>武汉大学</asp:ListItem>
-                        <asp:ListItem>华中科技大学</asp:ListItem>
-                        <asp:ListItem>北京大学</asp:ListItem>
-                        <asp:ListItem>清华大学</asp:ListItem>
+                        <asp:ListItem>哈尔滨工业大学</asp:ListItem>
+                        <asp:ListItem>上海交通大学</asp:ListItem>
+                        <asp:ListItem>中国海洋大学</asp:ListItem>
                     </asp:DropDownList>
                     <span class="auto-style21">&nbsp; 年级 </span>
                     <asp:DropDownList ID="DropDownList4" runat="server" CssClass="auto-style21">
-                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2018</asp:ListItem>
+                        <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2017</asp:ListItem>
                         <asp:ListItem>2016</asp:ListItem>
                     </asp:DropDownList>
@@ -163,8 +160,7 @@
                 </div>
             </asp:Panel>
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1083px" OnDataBound="GridView1_DataBound">
-                <AlternatingRowStyle BackColor="White" />
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource2" Width="1083px" OnDataBound="GridView1_DataBound">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
                     <asp:BoundField DataField="cname" HeaderText="课程名" SortExpression="cname" />
@@ -180,23 +176,13 @@
                     </asp:TemplateField>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="操作" ShowHeader="True" Text="课程详情" />
                 </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <div class="auto-style10">
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">&nbsp;&nbsp;&nbsp;&nbsp; 选课申请单（专业课）<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="auto-style15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span><span class="auto-style22">选课申请单（专业课）</span><span class="auto-style15"><br />
                 </span><br />
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="107px" Width="481px" OnDataBound="GridView2_DataBound">
-                    <AlternatingRowStyle BackColor="White" />
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Height="107px" Width="481px" OnDataBound="GridView2_DataBound">
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
                         <asp:BoundField DataField="cname" HeaderText="课程名" SortExpression="cname" />
@@ -207,16 +193,6 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [state] FROM [application2] WHERE (([account] = @account) AND ([type] = @type))">
                     <SelectParameters>

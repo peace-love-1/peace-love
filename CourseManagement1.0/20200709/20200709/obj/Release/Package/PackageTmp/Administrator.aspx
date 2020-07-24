@@ -43,17 +43,20 @@
         </div>
         <div class="auto-style2">
             <br />
-            <asp:Button ID="Button2" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button2_Click1" />
+            <asp:Button ID="Button2" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 13px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="退出登录" OnClick="Button2_Click1" />
+            <asp:Button ID="Button6" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 709px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="选课状态" OnClick="Button6_Click" />
             <br />
-            <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 204px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1584px;" Text="发布课程" OnClick="Button3_Click1" />
+            <asp:Button ID="Button3" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 187px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1271px;" Text="发布课程" OnClick="Button3_Click1" />
             <br />
-            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 637px; top: 39px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="修改课程" OnClick="Button5_Click" />
-            <br />
-            <br />
-            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 399px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="删除课程" OnClick="Button4_Click1" />
+            <asp:Button ID="Button5" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 535px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt" Text="修改课程" OnClick="Button5_Click" />
             <br />
             <br />
-            <span class="auto-style4">课头号：</span><asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="120px" CssClass="auto-style4"></asp:TextBox>
+            <asp:Button ID="Button4" runat="server" BackColor="Black" BorderColor="Black" BorderStyle="None" style="z-index: 1; left: 361px; top: 40px; position: absolute; color: #FFFFFF; font-size: 18pt; right: 1079px;" Text="删除课程" OnClick="Button4_Click1" />
+            <br />
+            <br />
+            <span class="auto-style4">
+            <br />
+            课头号：</span><asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="120px" CssClass="auto-style4"></asp:TextBox>
             <span class="auto-style4">&nbsp;用户名：</span><asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="141px" CssClass="auto-style4"></asp:TextBox>
             <span class="auto-style4">&nbsp;选课状态：<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="38px" Width="178px">
                 <asp:ListItem>待审核</asp:ListItem>
@@ -64,8 +67,7 @@
             <br />
             <br />
 &nbsp;<br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="481px" OnDataBound="GridView1_DataBound" Width="1066px" CssClass="auto-style3">
-                <AlternatingRowStyle BackColor="White" />
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" Height="481px" OnDataBound="GridView1_DataBound" Width="1066px" CssClass="auto-style3">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="课头号" ReadOnly="True" SortExpression="id" />
                     <asp:BoundField DataField="cname" HeaderText="课程名" SortExpression="cname" />
@@ -82,16 +84,6 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
             <br />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:sqlcon %>" SelectCommand="SELECT [id], [cname], [account], [state] FROM [application2] WHERE (([state] = @state) AND ([id] = @id)) ORDER BY [account]">
