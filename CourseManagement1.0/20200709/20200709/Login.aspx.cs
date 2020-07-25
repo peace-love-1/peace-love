@@ -9,6 +9,9 @@ using System.Web.UI;
 //update date:20200711
 //description:登录界面，成功则跳转至主页面，不成功则提示错误信息
 //2020/07/28  增加了回车触发按钮事件
+
+//author:彭子晨；
+//update date:2020/7/25  description:增加about、contact按钮的弹窗显示，插入课程logo
 namespace _20200709
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -112,5 +115,14 @@ namespace _20200709
            
         }
 
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('团队: peace&love   成员:杨金鹏，林玉琴，彭子晨')</script>");
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('联系邮箱：2427438398@qq.com')</script>");
+        }
     }
 }

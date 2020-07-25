@@ -7,6 +7,8 @@
 //description:完成找回/修改密码的功能
 //2020/07/28  增加了回车触发按钮事件
 
+//author:彭子晨；
+//update date:2020/7/25  description:增加about、contact按钮的弹窗显示，插入课程logo
 namespace _20200709
 {
     public partial class wangjimima : System.Web.UI.Page
@@ -154,6 +156,16 @@ namespace _20200709
             }
             else
                 Label10.Text = "两次密码不一致";
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('团队: peace&love   成员:杨金鹏，林玉琴，彭子晨')</script>");
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('联系邮箱：2427438398@qq.com')</script>");
         }
     }
 }

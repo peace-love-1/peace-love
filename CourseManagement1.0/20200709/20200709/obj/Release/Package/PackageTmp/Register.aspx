@@ -10,14 +10,24 @@
         #form1 {
             height: 1166px;
         }
-        .auto-style4 {
+        .auto-style2 {
             z-index: 1;
-            left: 332px;
-            top: 526px;
+            left: 19%;
+            top: 4%;
             position: absolute;
-            margin-top: 3px;
+            width: 129px;
+            height: 53px;
+            right: 1388px;
         }
-    </style>
+        .auto-style1 {
+            z-index: 1;
+            left: 28%;
+            top: 4%;
+            position: absolute;
+            width: 142px;
+            height: 52px;
+        }
+        </style>
     <script type="text/javascript">
         function doButton()
         {
@@ -34,7 +44,7 @@
             width:100%;            
             margin:0;      
             padding:0;
-            background-image:url('image1/register2.jpg');
+            background-image:url('image1/register2.png');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;">
@@ -88,6 +98,8 @@ font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" 
             <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 76%; top: 69%; position: absolute; color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
             <asp:Button ID="Button3" runat="server" BackColor="#57C6CA" BorderColor="#51C4CA" BorderStyle="None" OnClick="Button3_Click" style="z-index: 1; left: 40%; top: 92%; position: absolute; height: 42px; width: 96px;font-size: 24pt; font-weight: 700; font-family: 楷体" Text="注册" />
         </asp:Panel>
+            <asp:Button ID="Button6" runat="server" style="color: #FFFFFF; font-size: x-large;" Text="ABOUT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" CssClass="auto-style2" OnClick="Button6_Click" />
+            <asp:Button ID="Button7" runat="server" style="color: #FFFFFF; font-size: x-large;" Text="CONTACT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" CssClass="auto-style1" OnClick="Button7_Click" />
     </form>
 </body>
 </html>

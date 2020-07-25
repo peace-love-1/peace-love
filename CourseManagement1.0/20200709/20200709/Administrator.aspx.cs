@@ -11,10 +11,13 @@ using System.Web.UI.WebControls;
 //description:管理员界面，可以修改选课状态（同意、拒绝），可以对课程信息进行多条件的筛选查询
 //update date:2020/07/23  description：添加了到发布、删除、修改、和退出登录页面的跳转，进行了页面的美化
 
+//author:彭子晨
+//update date:2020/07/21  description:修改代码，实现管理员审核选课申请界面
+//update date:2020/7/25   description:插入课程logo
 namespace _20200709
 {
     //author:彭子晨
-    //create date:2020/07/21  description:管理员审核选课申请界面
+    //update date:2020/07/21  description:管理员审核选课申请界面
     public partial class Administrator : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)

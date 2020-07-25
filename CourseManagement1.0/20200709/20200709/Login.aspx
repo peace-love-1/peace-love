@@ -10,13 +10,21 @@
         #form1 {            height: 674px;
         }
         .auto-style1 {
-            width: 218px;
-            height: 292px;
-            position: absolute;
-            top: -77px;
-            left: -936px;
             z-index: 1;
-            margin-top: 0px;
+            left: 28%;
+            top: 4%;
+            position: absolute;
+            width: 142px;
+            height: 58px;
+        }
+        .auto-style2 {
+            z-index: 1;
+            left: 20%;
+            top: 4%;
+            position: absolute;
+            width: 120px;
+            height: 54px;
+            right: 1385px;
         }
     </style>
         <script type="text/javascript">
@@ -34,7 +42,7 @@
             width:100%;            
             margin:0; 
             padding:0;
-            background-image:url('image1/login.jpg');
+            background-image:url('image1/login.png');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;">
@@ -73,9 +81,8 @@ border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" BorderStyle="None
         <br />
         <br />
         <br />
-            <asp:Button ID="Button5" runat="server" style="z-index: 1; left: 10%; top: 4%; position: absolute; color: #FFFFFF; font-size: x-large;" Text="ABOUT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" />
-            <asp:Button ID="Button6" runat="server" style="z-index: 1; left: 19%; top: 4%; position: absolute; color: #FFFFFF; font-size: x-large;" Text="CONTACT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" />
-            <asp:Button ID="Button7" runat="server" style="z-index: 1; left: 30%; top: 4%; position: absolute; color: #FFFFFF; font-size: x-large;" Text="QUESTION" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" />
+            <asp:Button ID="Button5" runat="server" style="color: #FFFFFF; font-size: x-large;" Text="ABOUT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" CssClass="auto-style2" OnClick="Button5_Click" />
+            <asp:Button ID="Button6" runat="server" style="color: #FFFFFF; font-size: x-large;" Text="CONTACT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" CssClass="auto-style1" OnClick="Button6_Click" />
         <br />
         <br />
         <br />

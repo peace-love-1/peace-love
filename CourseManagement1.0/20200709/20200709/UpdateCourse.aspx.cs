@@ -10,9 +10,10 @@ namespace _20200709
 {
     //author:彭子晨
     //create date:2020/07/22  description:管理员修改课程界面
+    //update date:2020/7/25   description:插入课程logo
 
-        //author:林玉琴
-        //update date:2020/07/23  description：添加了到发布、删除、修改、和退出登录页面的跳转，进行了页面的美化
+    //author:林玉琴
+    //update date:2020/07/23  description：添加了到发布、删除、修改、和退出登录页面的跳转，进行了页面的美化
 
     public partial class UpdateCourse : System.Web.UI.Page
     {

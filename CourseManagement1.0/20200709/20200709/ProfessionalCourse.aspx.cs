@@ -8,6 +8,7 @@ namespace _20200709
     //create date:2020/07/16  description:专业课选课界面，可以进行查询课程、选课操作
     //update date:2020/07/17  description:增加选课申请表功能
     //update date:2020/07/18  description:实现选课按钮的可用与不可用之间的转换
+    //update date:2020/7/25   description:插入课程logo
 
     //author:林玉琴
     //update date:2020/07/23  description：修改了到专业课选课、通识课选课、已选课程页面的跳转，进行了页面的美化

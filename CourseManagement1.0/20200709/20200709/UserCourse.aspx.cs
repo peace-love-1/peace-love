@@ -11,6 +11,7 @@ namespace _20200709
     //author:彭子晨
     //create date:2020/07/16   description:已选课程界面，可以进行查询已选课程信息
     //update date:2020/07/17   description:增加撤课功能
+    //update date:2020/7/25   description:插入课程logo
 
     //author:林玉琴
     //update date:2020/07/23  description：修改了到专业课选课、通识课选课、已选课程页面的跳转，进行了页面的美化

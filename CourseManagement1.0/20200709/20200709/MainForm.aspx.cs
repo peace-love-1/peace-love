@@ -13,5 +13,15 @@ namespace _20200709
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('团队: peace&love   成员:杨金鹏，林玉琴，彭子晨')</script>");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('联系邮箱：2427438398@qq.com')</script>");
+        }
     }
 }

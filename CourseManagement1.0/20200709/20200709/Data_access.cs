@@ -10,8 +10,10 @@ namespace _20200709
     //update date:2020/07/16  description:增加InsertUc函数，向选课表中插入用户名、课头号
     //update date:2020/07/17  description:增加DeleteUc函数，删除选课表中的数据
     //update date:2020/07/18  description:增加QueryUc1、 QueryUc2函数，判断选课状态是否为“待审核”或“成功”和选课状态是否为“成功”
-    //update date:2020/07/21  description:增加UpdateUc1、UpdateUc2、DeleteCourses、QueryCourseId函数,将选课状态修改为“成功”或“失败”
+    //update date:2020/07/21  description:增加UpdateUc1、UpdateUc2、DeleteCourses、QueryCourseId函数
     //update date:2020/07/22  description:增加QueryCourses、UpdateCourses1、UpdateCourses2函数
+    //update date:2020/07/23  description:修改UpdateData、UpdateState函数
+    
 
     //author: 林玉琴
     //update date:2020/07/15 
@@ -28,7 +30,8 @@ namespace _20200709
             return connection;
         } 
 
-        //插入新的用户数据，后面可能增加用户权限属性
+
+        //对用户表操作
         public static void InsertUsers(string account, string password)
         {
             using (SqlConnection connection = GetConnection())
@@ -42,9 +45,8 @@ namespace _20200709
                     cmd.ExecuteNonQuery();
                 }
             }
-        } 
+        } //插入新的用户数据
 
-        //修改数据表中某数据
         public static string UpdateData(string a,string b)
         {
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
@@ -66,9 +68,8 @@ namespace _20200709
             {
                 conn.Close();
             }
-        }
+        }//修改数据表中某数据
 
-        //修改数据表中某数据
         public static string UpdateState(string a, string b)
         {
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["sqlcon"].ToString();
@@ -88,10 +89,8 @@ namespace _20200709
             {
                 conn.Close();
             }
-        }
+        }//修改数据表中某数据
 
-
-        //查询某数据是否存在，a表示要查询的数据，b表示表中所在列的名字
         public static string QueryData(string a,string b)
         {
             //a = b;
@@ -121,10 +120,8 @@ namespace _20200709
             {
                 conn.Close();
             }
-        } 
+        } //查询某数据是否存在，a表示要查询的数据，b表示表中所在列的名字
 
-
-        //查询用户密码是否输入正确
         public static bool QueryPassword(string account, string password)
         {
             using (SqlConnection connection = GetConnection())
@@ -146,10 +143,10 @@ namespace _20200709
                     }
                 }
             }
-        }
+        } //查询用户密码是否输入正确
 
 
-
+        //对课程表操作
         public static bool QueryCourses(string id)
         {
             using (SqlConnection connection = GetConnection())
@@ -295,7 +292,7 @@ namespace _20200709
         }//根据课头号查询课程信息
 
 
-
+        //对专业课视图操作
         public static SqlDataReader QueryPcourseMajor(string academy,string major,int grade)
         {
             using (SqlConnection connection = GetConnection())
@@ -327,6 +324,8 @@ namespace _20200709
             }
         }//按年级、课程名查询专业课课程信息
 
+
+        //对通识课视图操作
         public static SqlDataReader QueryGcourseCname(string cname)
         {
                SqlConnection connection = GetConnection();
@@ -354,6 +353,8 @@ namespace _20200709
             }
         }//按教师名查询通用课课程信息
 
+
+        //对已选课程视图操作
         public static SqlDataReader QueryUcourseDate(string schoolyear, int schoolterm)
         {
             using (SqlConnection connection = GetConnection())
@@ -369,6 +370,8 @@ namespace _20200709
             }
         }//按学年、学期查询已选课程
 
+
+        //对选课表操作
         public static void InsertUc(string account,string id,string state)
         {
             using (SqlConnection connection = GetConnection())

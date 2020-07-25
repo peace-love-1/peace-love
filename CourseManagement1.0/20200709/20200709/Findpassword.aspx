@@ -10,7 +10,24 @@
         #form1 {
             height: 736px;
         }
-    </style>
+        .auto-style2 {
+            z-index: 1;
+            left: 20%;
+            top: 4%;
+            position: absolute;
+            width: 120px;
+            height: 54px;
+            right: 1381px;
+        }
+        .auto-style1 {
+            z-index: 1;
+            left: 28%;
+            top: 4%;
+            position: absolute;
+            width: 142px;
+            height: 53px;
+        }
+        </style>
 
         <script type="text/javascript">
         function doButton()
@@ -37,7 +54,7 @@
             width:100%;            
             margin:0; 
             padding:0;
-            background-image:url('image1/password2.jpg');
+            background-image:url('image1/password2.png');
             background-size: 100% 100%;
             background-repeat:no-repeat; 
             background-attachment: fixed;">
@@ -74,6 +91,8 @@ font-weight: 700;border-radius:10px;" BackColor="#5EC8CD" BorderColor="#51C4C9" 
             <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 82%; top: 39%; position: absolute;color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
             <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 82%; top: 51%; position: absolute;color: #FF0000; font-size: 14pt; font-family: 楷体;"></asp:Label>
         </asp:Panel>
+            <asp:Button ID="Button7" runat="server" style="color: #FFFFFF; font-size: x-large;" Text="CONTACT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" CssClass="auto-style1" OnClick="Button7_Click" />
+            <asp:Button ID="Button6" runat="server" style="color: #FFFFFF; font-size: x-large;" Text="ABOUT" BackColor="#090608" BorderColor="#0A0609" BorderStyle="None" CssClass="auto-style2" OnClick="Button6_Click" />
     </form>
 </body>
 </html>
